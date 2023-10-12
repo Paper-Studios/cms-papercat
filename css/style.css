@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Courier+Prime&display=swap');
+:root {
+  --color-primary: #5928B2;
+  --color-secondary: #F5647F;
+  --color-white: #ffffff;
+  --color-gradient: linear-gradient(to bottom, #884CF5, #4E229C);
+  --border-purple: 2px solid #5928B2;
+  --text-primary: 'Bubblegum Sans', cursive;
+  --text-secondary: 'Courier Prime', monospace;
+}
+
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+body {
+  margin: 0;
+}
