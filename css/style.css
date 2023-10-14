@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Courier+Prime&family=Source+Sans+3&display=swap');
 :root {
   --color-primary: #5928B2;
   --color-secondary: #F5647F;
@@ -7,6 +7,7 @@
   --border-purple: 2px solid #5928B2;
   --text-primary: 'Bubblegum Sans', cursive;
   --text-secondary: 'Courier Prime', monospace;
+  --text-tertiary: 'Source Sans 3', sans-serif;
 }
 
 
