@@ -16,7 +16,7 @@ import config from '../react-bricks/config'
 
 interface PageProps {
   page: types.Page
-  navbar: types.Page
+  home: types.Page
   footer: types.Page
   errorNoKeys: boolean
   errorPage: boolean
@@ -26,7 +26,7 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({
   page,
-  navbar,
+  home,
   footer,
   errorNoKeys,
   errorPage,
@@ -37,7 +37,7 @@ const Page: React.FC<PageProps> = ({
   // Removes unknown or not allowed bricks
   const { pageTypes, bricks } = useReactBricksContext()
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
-  const headerOk = navbar ? cleanPage(navbar, pageTypes, bricks) : null
+  const headerOk = home ? cleanPage(home, pageTypes, bricks) : null
   const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
 
   return (
@@ -89,14 +89,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     cleanSlug = slug.join('/')
   }
 
-  const [page, navbar, footer] = await Promise.all([
+  const [page, home, footer] = await Promise.all([
     fetchPage(cleanSlug, config.apiKey, context.locale, config.pageTypes).catch(
       () => {
         errorPage = true
         return {}
       }
     ),
-    fetchPage('navbar', config.apiKey, context.locale).catch(() => {
+    fetchPage('home', config.apiKey, context.locale).catch(() => {
       errorHeader = true
       return {}
     }),
@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       page,
-      navbar,
+      home,
       footer,
       errorNoKeys,
       errorPage,

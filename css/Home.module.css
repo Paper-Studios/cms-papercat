@@ -1,0 +1,192 @@
+.Home {
+  background: var(--color-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3%;
+  margin-bottom: 30px;
+  z-index: 0;
+}
+
+.bannerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.headerimg {
+  filter: brightness(80%);
+}
+
+.bannerVideo {
+  position: absolute;
+  width: 70%;
+  height: 90%;
+}
+
+.blurb {
+  background-color: var(--color-secondary);
+  align-self: center;
+  margin: 4%;
+  padding: 2%;
+  font-size: x-large;
+  box-shadow: 0px -4px 8px #A13D51 inset;
+  position: relative;
+  border-radius: 2px;
+}
+
+.blurb::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  width: 45%;
+  height: 15px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  left: 2%;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.blurb::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  width: 45%;
+  height: 15px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  right: 2%;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.homeContent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+  padding: 0 1%;
+}
+
+.homeDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  flex-basis: 50%;
+}
+
+.abstract {
+  margin: 0;
+  font-family: var(--text-tertiary);
+  font-size: 20px;
+  background-color: #402278;
+  padding: 3%;
+  border-radius: 1rem 1rem;
+  margin-bottom: 2%;
+}
+
+.release {
+  margin: 4%;
+  padding: 20px;
+}
+
+.steamContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  background-color: #282F38;
+  position: relative;
+  margin-top: 2%;
+}
+
+.steamTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.steamTitle h4 {
+  font-size: 20px;
+  font-family: var(--text-tertiary);
+  margin: 0;
+  padding: 0;
+}
+
+.steamTitle span {
+  color: gray;
+}
+
+.steamTitle img {
+  width: 5%;
+  height: 5%;
+  filter: brightness(75%);
+}
+
+.steamInfo {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.steamInfo img {
+  width: 45%;
+  height: 30%;
+}
+
+.steamInfo p {
+  font-family: var(--text-tertiary);
+  font-size: 14px;
+  margin: 0 0 0 3%;
+}
+
+.steamPlatformIcons {
+  display: flex;
+  align-items: center;
+}
+
+.platformIcons {
+  margin-left: 2%;
+  font-size: 20px;
+}
+
+.steamButtons {
+  font-family: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: -8%;
+  height: 20%;
+  width: 100%;
+  padding: 0 2%;
+}
+
+.steam-button-left {
+  background-color: black;
+  margin-right: 5px;
+  padding: 1.5%;
+}
+
+.steam-button-right {
+  padding: 1.5%;
+  color: white;
+  background: linear-gradient(#87BC3C, #45740B);
+}
+
+.steam-button-right:hover {
+  color: white;
+  filter: brightness(75%);
+  cursor: pointer;
+}
+
+.home-screenshots {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-basis: 50%;
+}
+
+.home-screenshots img {
+  width: 93%;
+}

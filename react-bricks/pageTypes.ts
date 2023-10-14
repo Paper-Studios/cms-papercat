@@ -13,7 +13,7 @@ const pageTypes: types.IPageType[] = [
     pluralName: "layout",
     defaultLocked: true,
     defaultStatus: types.PageStatus.Published,
-    getDefaultContent: () => ['navbar', 'footer'],
+    getDefaultContent: () => ['home', 'footer'],
     isEntity: true,
   },
   {

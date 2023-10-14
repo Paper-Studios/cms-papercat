@@ -141,6 +141,7 @@
 }
 
 .cardOne {
+  transition: ease-in-out 0.4s;
   transform: rotate(15deg) translate(30%, -8%);
 }
 
@@ -149,6 +150,7 @@
 }
 
 .cardTwo {
+  transition: ease-in-out 0.4s;
   transform: rotate(-12deg) translate(185%, 25%);
 }
 
@@ -157,6 +159,7 @@
 }
 
 .cardThree {
+  transition: ease-in-out 0.4s;
   transform: rotate(-20deg) translate(420%, 215%);
   height: 75px;
 }
