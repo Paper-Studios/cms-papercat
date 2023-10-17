@@ -70,7 +70,6 @@ Home.schema = {
   name: "home",
   label: "Home Page",
   category: 'layout',
-  getDefaultProps: () => ({}),
   sideEditProps: [],
 };
 
