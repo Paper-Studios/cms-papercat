@@ -1,23 +1,39 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons';
+import IFramePlayer from "../features/IFramePlayer";
 import { Text, RichText, Image, types } from "react-bricks/frontend";
 import styles from "../../../css/Home.module.css";
 
 //=============================
+// Local Types
+//=============================
+
+interface HomeProps {
+  videoLink: string;
+}
+
+//=============================
 // Component to be rendered
 //=============================
-const Home: types.Brick = () => {
+const Home: types.Brick<HomeProps> = ({ videoLink }) => {
   return (
     <div className={styles.Home}>
       <div className={styles.bannerContainer}>
-        <img src={'/assets/header.jpg'} className={styles.headerimg} width='100%' alt='Paper Perjury banner'/>
+        <Image
+          propName="image"
+          alt="Paper Perjury Banner"
+          imageClassName={styles.headerimg}
+          aspectRatio={2.21}
+        />
+        {/* <img src={'/assets/header.jpg'} className={styles.headerimg} width='100%' alt='Paper Perjury banner'/> */}
         <iframe
-            src="https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB"
-            title="Paper Perjury Trailer"
+            src={videoLink}
+            title="YouTube video player"
             allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             className={styles.bannerVideo}
           />
+          {/* <IFramePlayer videoLink={videoLink} /> */}
       </div>
       <div className={styles.blurb}>
         <span>Solve Crimes, Outsmart Criminals</span>
@@ -70,7 +86,22 @@ Home.schema = {
   name: "home",
   label: "Home Page",
   category: 'layout',
-  sideEditProps: [],
+  getDefaultProps: () => ({
+    videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
+  }),
+  sideEditProps: [
+    {
+      groupName: 'Hero Banner',
+      defaultOpen: true,
+      props: [
+        {
+          name: 'videoLink',
+          label: 'Trailer Url in embed format (On Youtube: Share > embed > copy the src url)',
+          type: types.SideEditPropType.Text,
+        }
+      ]
+    }
+  ],
 };
 
 export default Home;
