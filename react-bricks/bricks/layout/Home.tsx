@@ -11,6 +11,8 @@ import styles from "../../../css/Home.module.css";
 
 interface HomeProps {
   videoLink: string;
+  blurb1: string;
+  blurb2: string;
 }
 
 //=============================
@@ -27,16 +29,21 @@ const Home: types.Brick<HomeProps> = ({ videoLink }) => {
           aspectRatio={2.21}
         />
         {/* <img src={'/assets/header.jpg'} className={styles.headerimg} width='100%' alt='Paper Perjury banner'/> */}
-        <iframe
+        {/* <iframe
             src={videoLink}
             title="YouTube video player"
             allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             className={styles.bannerVideo}
-          />
-          {/* <IFramePlayer videoLink={videoLink} /> */}
+          /> */}
+          <IFramePlayer videoLink={videoLink} />
       </div>
       <div className={styles.blurb}>
-        <span>Solve Crimes, Outsmart Criminals</span>
+        <Text
+          renderBlock={({ children }) => (
+            <span>{children}</span>
+          )}
+          propName="blurb1"
+        />
       </div>
       <div className={styles.homeContent}>
         <div className={styles.homeDescription}>
@@ -44,7 +51,12 @@ const Home: types.Brick<HomeProps> = ({ videoLink }) => {
             Paper Perjury is an engaging point-and-click detective game available on Steam. Developed by James Acosta and his team, Paper Perjury garnered recognition by winning the Tiny Team Selections award in 2023. In Paper Perjury, players step into the shoes of Justina, a hired police clerk with a knack for discovering the truth. With a total of 5 cases to investigate, players must put their detective skills to the test by interviewing suspects and collecting evidence. The game's pixel art style adds a charming and nostalgic touch, making Paper Perjury a must-play for fans of classic detective adventures like Ace Attorney.
           </p>
           <div className={`${styles.blurb} ${styles.release}`}>
-            <span>Coming Early 2024</span>
+            <Text
+              renderBlock={({ children }) => (
+                <span>{children}</span>
+              )}
+              propName="blurb2"
+            />
           </div>
           <div className={styles.steamContainer}>
             <div className={styles.steamTitle}>
@@ -88,6 +100,8 @@ Home.schema = {
   category: 'layout',
   getDefaultProps: () => ({
     videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
+    blurb1: "Solve Crimes, Outsmart Criminals",
+    blurb2: "Coming Early 2024"
   }),
   sideEditProps: [
     {
@@ -97,6 +111,22 @@ Home.schema = {
         {
           name: 'videoLink',
           label: 'Trailer Url in embed format (On Youtube: Share > embed > copy the src url)',
+          type: types.SideEditPropType.Text,
+        }
+      ]
+    },
+    {
+      groupName: 'Hero Content',
+      defaultOpen: true,
+      props: [
+        {
+          name: 'blurb1',
+          label: 'First Title Blurb',
+          type: types.SideEditPropType.Text,
+        },
+        {
+          name: 'blurb2',
+          label: 'Second Title Blurb',
           type: types.SideEditPropType.Text,
         }
       ]
