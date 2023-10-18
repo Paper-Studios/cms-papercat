@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 3%;
   margin-bottom: 30px;
+  position: relative;
   z-index: 0;
 }
 
@@ -17,6 +18,8 @@
 
 .headerimg {
   filter: brightness(80%);
+  width: 100%;
+  height: 100%;
 }
 
 .bannerVideo {
@@ -42,10 +45,10 @@
   bottom: 10%;
   width: 45%;
   height: 15px;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.6);
   z-index: -1;
   left: 2%;
-  transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-4deg);
 }
 
 .blurb::after {
@@ -54,10 +57,10 @@
   bottom: 10%;
   width: 45%;
   height: 15px;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.6);
   z-index: -1;
   right: 2%;
-  transform: skew(5deg) rotate(5deg);
+  transform: skew(5deg) rotate(4deg);
 }
 
 .homeContent {
@@ -161,25 +164,25 @@
   padding: 0 2%;
 }
 
-.steam-button-left {
+.steamButtonLeft {
   background-color: black;
   margin-right: 5px;
   padding: 1.5%;
 }
 
-.steam-button-right {
+.steamButtonRight {
   padding: 1.5%;
   color: white;
   background: linear-gradient(#87BC3C, #45740B);
 }
 
-.steam-button-right:hover {
+.steamButtonRight:hover {
   color: white;
   filter: brightness(75%);
   cursor: pointer;
 }
 
-.home-screenshots {
+.homeScreenshots {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -187,6 +190,127 @@
   flex-basis: 50%;
 }
 
-.home-screenshots img {
+.homeScreenshots img {
   width: 93%;
+}
+
+@media screen and (max-width: 1536px) {
+  .homeScreenshots {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .homeContent {
+    flex-direction: column;
+  }
+  .homeDescription {
+    margin-bottom: 8%;
+  }
+  .blurb {
+    font-size: larger;
+  }
+  .abstract {
+    margin: 0;
+  }
+  .steamContainer {
+    margin: 0;
+  }
+  .steamTitle h4 {
+    font-size: 24px;
+  }
+  .steamInfo p {
+    font-size: 20px;
+  }
+  .homeScreenshots {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .homeScreenshots img {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .steamInfo p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .abstract {
+    font-size: 18px;
+  }
+  .steamTitle h4 {
+    font-size: 22px;
+  }
+  .steamInfo p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .Home {
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .homeContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .homeDescription {
+    width: 100%;
+  }
+  .abstract {
+    font-size: 16px;
+  }
+  .blurb {
+    width: 80%;
+    margin: 8%;
+    font-size: 16px;
+    text-align: center;
+  }
+  .release {
+    font-size: larger;
+  }
+  .steamContainer {
+    margin-bottom: 15px;
+  }
+  .steamInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .steamInfo img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .steamInfo p {
+    margin: 0 0 15px 0;
+  }
+  .steamPlatformIcons {
+    margin-bottom: 30px;
+  }
+  .steamPlatformIcons img{
+    width: 10%;
+  }
+  .homeScreenshots {
+    flex-direction: column;
+    align-items: center;
+  }
+  .homeScreenshots img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .steamPlatformIcons {
+    margin-bottom: 40px;
+  }
+  .steamButtons {
+    justify-content: center;
+    padding: 0;
+  }
 }

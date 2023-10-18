@@ -15,7 +15,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Hero Section',
-        bricks: [Home]
+        bricks: [Home, ...features]
       },
     ],
   },

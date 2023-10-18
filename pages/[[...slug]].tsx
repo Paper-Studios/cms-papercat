@@ -26,7 +26,6 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({
   page,
-  home,
   footer,
   errorNoKeys,
   errorPage,
@@ -37,7 +36,7 @@ const Page: React.FC<PageProps> = ({
   // Removes unknown or not allowed bricks
   const { pageTypes, bricks } = useReactBricksContext()
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
-  const headerOk = home ? cleanPage(home, pageTypes, bricks) : null
+  // const headerOk = home ? cleanPage(home, pageTypes, bricks) : null
   const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
 
   return (
@@ -48,11 +47,11 @@ const Page: React.FC<PageProps> = ({
             <title>{page.meta.title}</title>
             <meta name="description" content={page.meta.description} />
           </Head>
-          {headerOk && !errorHeader ? (
+          {/* {headerOk && !errorHeader ? (
             <PageViewer page={headerOk} showClickToEdit={false} />
           ) : (
             <ErrorNoHeader />
-          )}
+          )} */}
           <PageViewer page={pageOk} />
           {footerOk && !errorFooter ? (
             <PageViewer page={footerOk} showClickToEdit={false} />
@@ -89,17 +88,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
     cleanSlug = slug.join('/')
   }
 
-  const [page, home, footer] = await Promise.all([
+  const [page, footer] = await Promise.all([
     fetchPage(cleanSlug, config.apiKey, context.locale, config.pageTypes).catch(
       () => {
         errorPage = true
         return {}
       }
     ),
-    fetchPage('home', config.apiKey, context.locale).catch(() => {
-      errorHeader = true
-      return {}
-    }),
+    // fetchPage('home', config.apiKey, context.locale).catch(() => {
+    //   errorHeader = true
+    //   return {}
+    // }),
     fetchPage('footer', config.apiKey, context.locale).catch(() => {
       errorFooter = true
       return {}
@@ -109,7 +108,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       page,
-      home,
       footer,
       errorNoKeys,
       errorPage,
