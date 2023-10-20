@@ -3,7 +3,6 @@ import Header from "./Header"
 import HeaderMenuItem from "./HeaderMenuItem"
 import HeaderMenuSubItem from "./HeaderMenuSubItem"
 import Navbar from "./Navbar"
-import Home from "./Home"
 import Footer from "./Footer"
 import FooterColumn from "./FooterColumn"
 import FooterLink from "./FooterLink"
@@ -13,7 +12,6 @@ const layout: types.Brick[] = [
   Header,
   HeaderMenuItem,
   HeaderMenuSubItem,
-  Home,
   Navbar,
   Footer,
   FooterColumn,

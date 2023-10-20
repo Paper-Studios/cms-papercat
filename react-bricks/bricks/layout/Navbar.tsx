@@ -27,7 +27,9 @@ const Navbar: types.Brick<NavItemProps> = ({
       <header className={styles.topNavHeader}>
         <div className={styles.topNavLargeCard}>
           <div className={styles.logoBg}>
-            <img src={'/logo.png'} className={styles.pcLogo} alt='Paper Cat Logo' />
+            <Link href="/">
+              <img src={'/logo.png'} className={styles.pcLogo} alt='Paper Cat Logo' />
+            </Link>
           </div>
           <div className={styles.topNavSocials}>
             <h3 className={styles.h3}>Paper Cat Games</h3>

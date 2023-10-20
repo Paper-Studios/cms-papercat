@@ -1,6 +1,6 @@
 import { types } from "react-bricks/frontend"
 import layout from "./layout"
-import Home from "./layout/Home"
+import Home from "./Home"
 import features from "./features"
 
 // const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]

@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../react-bricks/bricks/layout/Navbar';
 
 interface TeamMember {
   name: string;

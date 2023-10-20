@@ -5,7 +5,7 @@ import "../css/style.css"
 
 const MyApp = (props: AppProps) => {
   return (
-    <ReactBricksApp {...props}></ReactBricksApp>
+    <ReactBricksApp {...props} />
   )
 }
 
