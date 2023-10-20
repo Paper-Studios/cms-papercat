@@ -108,7 +108,7 @@ const Header: types.Brick<HeaderProps> = ({}) => {
 Header.schema = {
   name: 'header',
   label: 'Header',
-  category: 'layout',
+  category: 'demo',
   tags: ['header', 'menu'],
   repeaterItems: [
     {

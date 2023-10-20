@@ -9,7 +9,6 @@ import FooterLink from "./FooterLink"
 import Button from "./Button"
 
 const layout: types.Brick[] = [
-  Header,
   HeaderMenuItem,
   HeaderMenuSubItem,
   Navbar,

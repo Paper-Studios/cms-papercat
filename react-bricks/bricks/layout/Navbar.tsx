@@ -4,12 +4,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import {
   types,
   Link,
-  Text,
-  PageViewer,
-  cleanPage,
-  fetchPage,
-  usePage,
-  ReactBricksContext
+  Image
 } from 'react-bricks/frontend'
 import ErrorNoHeader from '../../../components/errorNoHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,6 +24,7 @@ interface NavItemProps {
   discordURL: string
   twitterURL: string
   steamURL: string
+  logo: any
 }
 
 const Navbar: types.Brick<NavItemProps> = ({
@@ -94,14 +90,9 @@ const Navbar: types.Brick<NavItemProps> = ({
 Navbar.schema = {
   name: 'navbar',
   label: 'Navbar',
-  // hideFromAddMenu: true,
   // hideFromBricksPane: true,
   category: 'layout',
-  // getDefaultProps: () => ({
-  //   discordURL: "https://www.discord.com/",
-  //   twitterURL: "https://www.twitter.com/",
-  //   steamURL: "https://store.steampowered.com/",
-  // }),
+  tags: ['header', 'menu', 'nav', 'navbar', 'navigation'],
   sideEditProps: [
     {
       groupName: 'Social Links',

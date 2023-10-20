@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ links, children }) => {
   return (
     <div className={`${styles.App}`}>
       <main className={styles.mainContainer}>
-        <Navbar discordURL={links.discord} twitterURL={links.twitter} steamURL={links.steam} />
+        <Navbar discordURL={links.discord} twitterURL={links.twitter} steamURL={links.steam} logo=''/>
         {children}
       </main>
     </div>
