@@ -1,5 +1,17 @@
-import React from 'react'
-import { types, Link, Text } from 'react-bricks/frontend'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import config from '../../config'
+import React, {useContext, useState, useEffect} from 'react'
+import {
+  types,
+  Link,
+  Text,
+  PageViewer,
+  cleanPage,
+  fetchPage,
+  usePage,
+  ReactBricksContext
+} from 'react-bricks/frontend'
+import ErrorNoHeader from '../../../components/errorNoHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHouse,
@@ -11,12 +23,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import styles from '../../../css/Navbar.module.css'
+import pageTypes from '../../pageTypes'
 
 interface NavItemProps {
   discordURL: string
   twitterURL: string
   steamURL: string
 }
+
 const Navbar: types.Brick<NavItemProps> = ({
   discordURL,
   twitterURL,
@@ -83,11 +97,11 @@ Navbar.schema = {
   // hideFromAddMenu: true,
   // hideFromBricksPane: true,
   category: 'layout',
-  getDefaultProps: () => ({
-    discordURL: "https://www.discord.com/",
-    twitterURL: "https://www.twitter.com/",
-    steamURL: "https://store.steampowered.com/",
-  }),
+  // getDefaultProps: () => ({
+  //   discordURL: "https://www.discord.com/",
+  //   twitterURL: "https://www.twitter.com/",
+  //   steamURL: "https://store.steampowered.com/",
+  // }),
   sideEditProps: [
     {
       groupName: 'Social Links',

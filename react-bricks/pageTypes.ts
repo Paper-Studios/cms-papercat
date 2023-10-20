@@ -11,9 +11,9 @@ const pageTypes: types.IPageType[] = [
   {
     name: "layout",
     pluralName: "layout",
-    defaultLocked: true,
+    defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    getDefaultContent: () => ['navbar', 'footer'],
+    getDefaultContent: () => ['navbar'],
     isEntity: true,
   },
 ]
