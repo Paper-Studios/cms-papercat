@@ -1,9 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons';
-import IFramePlayer from "../features/IFramePlayer";
+import IFramePlayer from "./features/IFramePlayer";
 import { Text, RichText, Image, types } from "react-bricks/frontend";
-import styles from "../../../css/Home.module.css";
+import styles from "../../css/Home.module.css";
 
 interface HomeProps {
   videoLink: string;
@@ -38,7 +38,7 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
             <span>{children}</span>
           )}
           propName="blurb1"
-          placeholder="Blurb"
+          placeholder=""
         />
       </div>
       <div className={styles.homeContent}>
@@ -64,7 +64,7 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
                 <span>{children}</span>
               )}
               propName="blurb2"
-              placeholder="Blurb"
+              placeholder=""
             />
           </div>
           <div className={styles.steamContainer}>
@@ -120,8 +120,18 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
           </div>
         </div>
         <div className={styles.homeScreenshots}>
-          <img src='/assets/screenshot1.jpg' alt='gameplay'/>
-          <img src='/assets/screenshot2.jpg' alt='gameplay'/>
+          <Image
+            propName="screenshot1"
+            alt="Gameplay"
+            aspectRatio={1.78}
+            maxWidth={600}
+          />
+          <Image
+            propName="screenshot2"
+            alt="Gameplay"
+            aspectRatio={1.78}
+            maxWidth={600}
+          />
         </div>
       </div>
     </div>

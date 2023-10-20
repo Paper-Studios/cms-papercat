@@ -8,7 +8,7 @@ interface IFramePlayerProps {
 const IFramePlayer: types.Brick<IFramePlayerProps> =({ videoLink }) => (
   <iframe
     src={videoLink}
-    title="Paper Perjury Trailer"
+    title="YouTube video player"
     allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     className={styles.bannerVideo}
   />
@@ -18,6 +18,7 @@ IFramePlayer.schema = {
   name: 'IFramePlayer',
   label: 'Video Player',
   category: 'features',
+  hideFromAddMenu: true,
   getDefaultProps: () => ({
     videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
   }),

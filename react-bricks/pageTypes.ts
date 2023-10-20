@@ -11,17 +11,10 @@ const pageTypes: types.IPageType[] = [
   {
     name: "layout",
     pluralName: "layout",
-    defaultLocked: true,
-    defaultStatus: types.PageStatus.Published,
-    getDefaultContent: () => [],
-    isEntity: true,
-  },
-  {
-    name: "team",
-    pluralName: "teams",
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    getDefaultContent: () => [],
+    getDefaultContent: () => ['navbar'],
+    isEntity: true,
   },
 ]
 

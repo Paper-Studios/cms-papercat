@@ -3,14 +3,19 @@ import Navbar from "../react-bricks/bricks/layout/Navbar"
 import styles from "../css/layout.module.css"
 
 interface LayoutProps {
+  links: {
+    discord: string
+    twitter: string
+    steam: string
+  }
   children: ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ links, children }) => {
   return (
     <div className={`${styles.App}`}>
       <main className={styles.mainContainer}>
-        <Navbar discordURL='https://www.discord.com' twitterURL='https://www.twitter.com' steamURL='https://www.webdevrachel.com'/>
+        <Navbar discordURL={links.discord} twitterURL={links.twitter} steamURL={links.steam} logo=''/>
         {children}
       </main>
     </div>

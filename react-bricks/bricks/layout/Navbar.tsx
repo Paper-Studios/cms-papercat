@@ -1,5 +1,12 @@
-import React from 'react'
-import { types, Link, Text } from 'react-bricks/frontend'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import config from '../../config'
+import React, {useContext, useState, useEffect} from 'react'
+import {
+  types,
+  Link,
+  Image
+} from 'react-bricks/frontend'
+import ErrorNoHeader from '../../../components/errorNoHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHouse,
@@ -11,12 +18,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import styles from '../../../css/Navbar.module.css'
+import pageTypes from '../../pageTypes'
 
 interface NavItemProps {
   discordURL: string
   twitterURL: string
   steamURL: string
+  logo: any
 }
+
 const Navbar: types.Brick<NavItemProps> = ({
   discordURL,
   twitterURL,
@@ -27,7 +37,9 @@ const Navbar: types.Brick<NavItemProps> = ({
       <header className={styles.topNavHeader}>
         <div className={styles.topNavLargeCard}>
           <div className={styles.logoBg}>
-            <img src={'/logo.png'} className={styles.pcLogo} alt='Paper Cat Logo' />
+            <Link href="/">
+              <img src={'/logo.png'} className={styles.pcLogo} alt='Paper Cat Logo' />
+            </Link>
           </div>
           <div className={styles.topNavSocials}>
             <h3 className={styles.h3}>Paper Cat Games</h3>
@@ -78,14 +90,9 @@ const Navbar: types.Brick<NavItemProps> = ({
 Navbar.schema = {
   name: 'navbar',
   label: 'Navbar',
-  // hideFromAddMenu: true,
   // hideFromBricksPane: true,
   category: 'layout',
-  getDefaultProps: () => ({
-    discordURL: "https://www.discord.com/",
-    twitterURL: "https://www.twitter.com/",
-    steamURL: "https://store.steampowered.com/",
-  }),
+  tags: ['header', 'menu', 'nav', 'navbar', 'navigation'],
   sideEditProps: [
     {
       groupName: 'Social Links',
