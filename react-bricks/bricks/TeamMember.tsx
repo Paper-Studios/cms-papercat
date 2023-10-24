@@ -63,7 +63,7 @@ TeamMember.schema = {
   name: 'TeamMember',
   label: 'Team Member',
   category: 'features',
-  // hideFromAddMenu: true,
+  hideFromAddMenu: true,
   getDefaultProps: () => ({
     memberName: 'Team Member Name',
     memberSubTitle: 'Team Member Subtitle',

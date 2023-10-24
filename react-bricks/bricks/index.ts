@@ -21,7 +21,7 @@ const bricks: types.Theme[] = [
       {
         categoryName: 'Team Section',
         bricks: [Team, TeamMember]
-      }
+      },
     ],
   },
 ]
