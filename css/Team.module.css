@@ -1,0 +1,44 @@
+.teamContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top, #884CF5, #4E229C);
+  padding: 5%;
+}
+
+.teamContent p {
+  font-family: var(--text-tertiary);
+  font-size: 20px;
+  margin: 2% 0;
+}
+
+.teamContent h1 {
+  margin: 2% 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .teamContent h1 {
+    font-size: 1.5rem;
+  }
+  .teamContent p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .teamContent {
+    margin-top: 5%;
+  }
+  .teamContent h1 {
+    margin: 5% 0;
+  }
+  .teamContent p {
+    margin: 5% 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .teamContent h1 {
+    text-align: center;
+  }
+}

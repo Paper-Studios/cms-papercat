@@ -1,6 +1,7 @@
 import { types } from "react-bricks/frontend"
 import layout from "./layout"
 import Home from "./Home"
+import Team from './Team'
 import TeamMember from './TeamMember'
 
 // const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]
@@ -19,7 +20,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Team Section',
-        bricks: [TeamMember]
+        bricks: [Team, TeamMember]
       }
     ],
   },
