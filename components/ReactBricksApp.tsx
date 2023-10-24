@@ -10,6 +10,8 @@ const ReactBricksApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const pagesRendered = pageProps.header?.content; // header is a layout entity that defaults to navbar content (see pageTypes.ts)
     const navProps = pagesRendered?.find((page) => page.type === 'navbar').props;
+    console.log('pages rendered are ', pagesRendered);
+    console.log('nav props are ', navProps);
     if (navProps) {
       setLinks({
         discord: navProps.discordURL,
