@@ -1,0 +1,143 @@
+/* Styles for the individual team member brick, which is a repeater brick within the team page */
+.member {
+  display: flex;
+  align-items: center;
+  background: #402278;
+  border-radius: 2rem;
+  margin-top: 50px;
+  padding: 2%;
+  justify-content: space-between;
+}
+
+.memberImageColumn {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 31%;
+  align-items: center;
+  position: relative;
+  align-self: center;
+}
+
+.memberImagePrimaryCard {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(#884CF5, #4E229C);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  position: absolute;
+  z-index: 1;
+}
+
+.memberImageSecondarySkewedCard {
+  width: 100%;
+  height: 150px;
+  background: var(--color-secondary);
+  transform: rotate(-10deg);
+}
+
+.memberImagePhotoHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  bottom: 5px;
+  border: 4px solid var(--color-secondary);
+  border-radius: 50%;
+}
+
+.memberPhoto {
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+}
+
+.memberContent {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 65%;
+}
+
+.memberContent h4 {
+  margin: 0;
+}
+
+.memberContent p {
+  font-family: var(--text-tertiary);
+}
+
+@media screen and (max-width: 1280px) {
+  .memberImagePrimaryCard {
+    height: 125px;
+  }
+  .memberImageSecondarySkewedCard {
+    height: 125px;
+  }
+  .memberPhoto {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .member {
+    flex-direction: column;
+    position: relative;
+  }
+  .memberImageColumn {
+    width: 50%;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+  }
+  .memberImageSecondarySkewedCard {
+    position: absolute;
+  }
+  .memberImagePhotoHolder {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .member {
+    padding: 4%;
+    margin-top: 30px;
+  }
+  .memberContent {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .memberImageColumn {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .memberContent h4 {
+    margin-bottom: 5%;
+  }
+  .memberImageColumn {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .member {
+    padding: 6%;
+  }
+  .memberImageColumn {
+    width: 90%;
+  }
+  .memberImagePrimaryCard {
+    height: 100px;
+  }
+  .memberImageSecondarySkewedCard {
+    height: 100px;
+  }
+  .memberPhoto {
+    height: 125px;
+    width: 125px;
+  }
+}
