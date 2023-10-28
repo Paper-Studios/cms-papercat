@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link' // client-side route transitions
 import { useRouter } from 'next/router'
 import { types } from 'react-bricks/frontend'
 

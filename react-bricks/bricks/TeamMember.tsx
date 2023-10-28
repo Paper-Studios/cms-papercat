@@ -1,6 +1,5 @@
 import React from 'react'
 import { types, Image, Text, RichText } from 'react-bricks'
-
 import styles from '../../css/TeamMember.module.css'
 
 export interface TeamMemberProps {
