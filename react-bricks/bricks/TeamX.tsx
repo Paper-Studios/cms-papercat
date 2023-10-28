@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, RichText, types, Repeater } from "react-bricks/frontend";
+import React from 'react'
+import { types, Text, RichText, Repeater } from 'react-bricks'
 
 import styles from '../../css/Team.module.css'
 
@@ -43,14 +43,16 @@ const Team: types.Brick<TeamProps> = () => {
       <Repeater propName='TeamMember' />
     </div>
   )
-};
+}
 
-//=============================
-// Brick Schema
-//=============================
 Team.schema = {
-  name: "team",
-  label: "Team",
+  name: 'team',
+  label: 'Team',
+  getDefaultProps: () => ({
+    studioTitle: 'Who we are as a studio',
+    teamDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    teamTitle: 'Meet Our Team',
+  }),
   repeaterItems: [
     {
       name: 'TeamMember',
@@ -58,34 +60,7 @@ Team.schema = {
       itemLabel: 'Team Member',
       min: 1
     }
-  ],
-  getDefaultProps: () => ({
-    studioTitle: 'Who we are as a studio',
-    teamDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    teamTitle: 'Meet Our Team',
-    TeamMember: [{
-      memberName: 'Your Name Here',
-      memberSubTitle: 'Your official title',
-      memberBio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-    }],
-  }),
-  sideEditProps: [
-    {
-      name: 'studioTitle',
-      label: 'Main Title',
-      type: types.SideEditPropType.Text,
-    },
-    {
-      name: 'teamDescription',
-      label: 'Team Description',
-      type: types.SideEditPropType.Textarea,
-    },
-    {
-      name: 'teamTitle',
-      label: 'Secondary Title',
-      type: types.SideEditPropType.Text,
-    }
-  ],
-};
+  ]
+}
 
 export default Team;

@@ -2,7 +2,6 @@ import { types } from "react-bricks/frontend"
 import layout from "./layout"
 import Home from "./Home"
 import Team from "./Team"
-import Footer from "./layout/Footer"
 import TeamMember from "./TeamMember"
 import features from "./features"
 
@@ -27,5 +26,9 @@ const bricks: types.Theme[] = [
     ],
   },
 ]
+
+export {
+  TeamMember,
+}
 
 export default bricks
