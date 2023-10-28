@@ -1,8 +1,8 @@
 import React from 'react'
-import { types, Image, Text, RichText } from 'react-bricks'
+import { types, Image, Text, RichText } from 'react-bricks/frontend'
 import styles from '../../css/TeamMember.module.css'
 
-export interface TeamMemberProps {
+interface TeamMemberProps {
   memberName: string;
   memberSubTitle: string;
   memberBio: string;
@@ -15,13 +15,17 @@ const TeamMember: types.Brick<TeamMemberProps> = () => {
         <div className={styles.memberImagePrimaryCard} />
         <div className={styles.memberImageSecondarySkewedCard} />
         <Image
-            propName='teamImage'
-            alt='Team Member'
-            maxWidth={175}
-            aspectRatio={1}
-            imageClassName={styles.memberPhoto}
-            renderWrapper={({children}) => (<div className={styles.memberImagePhotoHolder}>{children}</div>)}
-          />
+          propName='teamImage'
+          alt='Team Member'
+          maxWidth={175}
+          aspectRatio={1}
+          imageClassName={styles.memberPhoto}
+          renderWrapper={({children}) => (
+            <div className={styles.memberImagePhotoHolder}>
+              {children}
+            </div>
+          )}
+        />
       </div>
       <div className={styles.memberContent}>
         <Text
@@ -57,10 +61,12 @@ const TeamMember: types.Brick<TeamMemberProps> = () => {
   );
 }
 
+//=============================
+// Brick Schema
+//=============================
 TeamMember.schema = {
   name: 'TeamMember',
   label: 'Team Member',
-  category: 'features',
   hideFromAddMenu: true,
   getDefaultProps: () => ({
     memberName: 'Team Member Name',
