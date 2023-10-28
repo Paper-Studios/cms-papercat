@@ -1,16 +1,15 @@
-import React from "react";
-import { Text, RichText, Image, types, Repeater } from "react-bricks/frontend";
-import { TeamMemberProps } from './TeamMember'
+import React from 'react'
+import { types, Text, RichText, Repeater } from 'react-bricks'
+
 import styles from '../../css/Team.module.css'
 
 interface TeamProps {
   studioTitle: string;
   teamDescription: string;
   teamTitle: string;
-  TeamMember: TeamMemberProps[];
 }
 
-const Team: types.Brick<TeamProps> = ({ TeamMember }) => {
+const Team: types.Brick<TeamProps> = () => {
   return (
     <div className={styles.teamContent}>
       <Text
@@ -44,36 +43,16 @@ const Team: types.Brick<TeamProps> = ({ TeamMember }) => {
       <Repeater propName='TeamMember' />
     </div>
   )
-};
+}
 
-//=============================
-// Brick Schema
-//=============================
 Team.schema = {
-  name: "tester",
-  label: "Team",
+  name: 'team',
+  label: 'Team',
   getDefaultProps: () => ({
     studioTitle: 'Who we are as a studio',
     teamDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     teamTitle: 'Meet Our Team',
   }),
-  sideEditProps: [
-    {
-      name: 'studioTitle',
-      label: 'Main Title',
-      type: types.SideEditPropType.Text,
-    },
-    {
-      name: 'teamDescription',
-      label: 'Team Description',
-      type: types.SideEditPropType.Textarea,
-    },
-    {
-      name: 'teamTitle',
-      label: 'Secondary Title',
-      type: types.SideEditPropType.Text,
-    }
-  ],
   repeaterItems: [
     {
       name: 'TeamMember',
@@ -81,7 +60,7 @@ Team.schema = {
       itemLabel: 'Team Member',
       min: 1
     }
-  ],
-};
+  ]
+}
 
 export default Team;
