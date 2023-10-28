@@ -1,16 +1,17 @@
 import React from "react";
-import { Text, RichText, Image, types, Repeater } from "react-bricks/frontend";
+import { Text, RichText, types, Repeater } from "react-bricks/frontend";
 import { TeamMemberProps } from './TeamMember'
 import styles from '../../css/Team.module.css'
+import dynamic from "next/dynamic"
 
 interface TeamProps {
   studioTitle: string;
   teamDescription: string;
   teamTitle: string;
-  TeamMember: TeamMemberProps[];
+  // TeamMember: TeamMemberProps[];
 }
 
-const Team: types.Brick<TeamProps> = ({ TeamMember }) => {
+const Team: types.Brick<TeamProps> = () => {
   return (
     <div className={styles.teamContent}>
       <Text
@@ -50,12 +51,26 @@ const Team: types.Brick<TeamProps> = ({ TeamMember }) => {
 // Brick Schema
 //=============================
 Team.schema = {
-  name: "tester",
+  name: "team",
   label: "Team",
+  category: "team",
+  repeaterItems: [
+    {
+      name: 'TeamMember',
+      itemType: 'TeamMember',
+      itemLabel: 'Team Member',
+      min: 1
+    }
+  ],
   getDefaultProps: () => ({
     studioTitle: 'Who we are as a studio',
     teamDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     teamTitle: 'Meet Our Team',
+    TeamMember: [{
+      memberName: 'Joe Smith',
+      memberSubTitle: 'CEO',
+      memberBio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }],
   }),
   sideEditProps: [
     {
@@ -72,14 +87,6 @@ Team.schema = {
       name: 'teamTitle',
       label: 'Secondary Title',
       type: types.SideEditPropType.Text,
-    }
-  ],
-  repeaterItems: [
-    {
-      name: 'TeamMember',
-      itemType: 'TeamMember',
-      itemLabel: 'Team Member',
-      min: 1
     }
   ],
 };
