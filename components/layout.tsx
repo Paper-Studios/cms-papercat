@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useEffect, useState } from "react"
+import React, { ReactNode } from "react"
 import Navbar from "../react-bricks/bricks/layout/Navbar"
 import styles from "../css/layout.module.css"
 

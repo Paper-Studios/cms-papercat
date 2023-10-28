@@ -189,7 +189,7 @@ Home.schema = {
         {
           name: 'abstract',
           label: 'Summary of Game',
-          type: types.SideEditPropType.Text,
+          type: types.SideEditPropType.Textarea,
         }
       ]
     },
@@ -205,7 +205,7 @@ Home.schema = {
         {
           name: 'steamDesc',
           label: 'Steam Game Description',
-          type: types.SideEditPropType.Text,
+          type: types.SideEditPropType.Textarea,
         },
         {
           name: 'tinyTeam',
