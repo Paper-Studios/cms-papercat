@@ -15,7 +15,7 @@ const pageTypes: types.IPageType[] = [
     defaultStatus: types.PageStatus.Published,
     getDefaultContent: () => ['navbar'],
     isEntity: true,
-  },
+  }
 ]
 
 export default pageTypes

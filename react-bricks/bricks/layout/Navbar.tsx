@@ -1,6 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import config from '../../config'
-import React, {useContext, useState, useEffect} from 'react'
+import React from 'react'
 import {
   types,
   Link,
@@ -24,7 +22,6 @@ interface NavItemProps {
   discordURL: string
   twitterURL: string
   steamURL: string
-  logo: any
 }
 
 const Navbar: types.Brick<NavItemProps> = ({
@@ -90,7 +87,6 @@ const Navbar: types.Brick<NavItemProps> = ({
 Navbar.schema = {
   name: 'navbar',
   label: 'Navbar',
-  // hideFromBricksPane: true,
   category: 'layout',
   tags: ['header', 'menu', 'nav', 'navbar', 'navigation'],
   sideEditProps: [

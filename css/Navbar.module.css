@@ -378,9 +378,6 @@
 
 /* X-SMALL MOBILE */
 @media screen and (max-width: 450px) {
-  .mainContainer {
-    padding: 0 5%;
-  }
   .navigationContainer {
     margin: 6% 0 10% 0;
   }
