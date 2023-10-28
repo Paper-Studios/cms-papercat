@@ -1,10 +1,8 @@
 import React from 'react'
 import {
   types,
-  Link,
-  Image
+  Link
 } from 'react-bricks/frontend'
-import ErrorNoHeader from '../../../components/errorNoHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHouse,
@@ -16,7 +14,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import styles from '../../../css/Navbar.module.css'
-import pageTypes from '../../pageTypes'
 
 interface NavItemProps {
   discordURL: string
@@ -84,6 +81,9 @@ const Navbar: types.Brick<NavItemProps> = ({
   )
 }
 
+//=============================
+// Brick Schema
+//=============================
 Navbar.schema = {
   name: 'navbar',
   label: 'Navbar',

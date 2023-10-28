@@ -2,6 +2,7 @@ import { types } from "react-bricks/frontend"
 import layout from "./layout"
 import Home from "./Home"
 import Team from "./Team"
+import Footer from "./layout/Footer"
 import TeamMember from "./TeamMember"
 import features from "./features"
 
@@ -21,7 +22,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Team Section',
-        bricks: [Team]
+        bricks: [Team, TeamMember]
       },
     ],
   },
