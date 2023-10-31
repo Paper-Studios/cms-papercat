@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, Repeater, types } from "react-bricks/frontend"
+import { RichText, Image, Repeater, types, Link } from "react-bricks/frontend"
 
 import styles from "../../../css/Footer.module.css"
 
@@ -7,24 +7,35 @@ interface FooterProps {}
 
 const Footer: types.Brick<FooterProps> = ({}) => {
   return (
-    <footer className={styles.footer}>
-      <section className={styles.footerSectionTitle}>
-        <Text
-          propName="title"
-          placeholder=""
-          renderBlock={({ children }) => (
-            <h3 className={styles.footerTitle}>{children}</h3>
-          )}
-        />
-        <Text
-          propName="copyright"
-          placeholder=""
-          renderBlock={({ children }) => (
-            <span>{children}</span>
-          )}
-        />
+    <footer>
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.elementsInfo}>
+            <Link href='/' className={styles.linkLogo}>
+              <Image
+                propName='logo'
+                alt='Logo'
+                maxWidth={300}
+                imageClassName={styles.imageLogo}
+              />
+            </Link>
+            <RichText
+              propName='copyright'
+              placeholder='Copyright notice'
+              renderBlock={({ children }) => (
+                <p className={styles.paragraphRichText}>{children}</p>
+              )}
+              allowedFeatures={[types.RichTextFeatures.Link]}
+              renderLink={({ children, href }) => (
+                <Link href={href} className={styles.renderLink}>
+                  {children}
+                </Link>
+              )}
+            />
+          </div>
+          <Repeater propName='columns' />
+        </div>
       </section>
-      <Repeater propName="columns" />
     </footer>
   )
 }
@@ -41,9 +52,36 @@ Footer.schema = {
       max: 4,
     },
   ],
+  // Defaults when a new brick is added
   getDefaultProps: () => ({
-    title: "Paper Cat Games",
-    copyright: "©2023 CA, USA",
+    logo: {
+      src: "https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg",
+      placeholderSrc:
+        "https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg",
+      srcSet: "",
+      alt: "React Bricks",
+      seoName: "react-bricks",
+      width: 1700.787,
+      height: 377.953,
+    },
+    copyright: [
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "© React Bricks, Inc.",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        children: [
+          {
+            text: "Proudly made in Italy",
+          },
+        ],
+      },
+    ],
     columns: [
       {
         title: "Company",
@@ -127,6 +165,8 @@ Footer.schema = {
       },
     ],
   }),
+
+  // Sidebar Edit controls for props
   sideEditProps: [],
 }
 
