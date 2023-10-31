@@ -6,7 +6,7 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import FooterColumn from "./FooterColumn"
 import FooterLink from "./FooterLink"
-import Button from "./Button"
+import ButtonX from "./ButtonX"
 
 const layout: types.Brick[] = [
   HeaderMenuItem,
@@ -15,7 +15,7 @@ const layout: types.Brick[] = [
   Footer,
   FooterColumn,
   FooterLink,
-  Button,
+  ButtonX,
 ]
 
 export default layout
