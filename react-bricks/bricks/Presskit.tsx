@@ -87,6 +87,7 @@ const Presskit: types.Brick<PresskitProps> = ({ videoLink }) => {
         <div className={styles.videoWrapper}>
           <IFramePlayer videoLink={videoLink} classname={styles.trailer}/>
         </div>
+        <Repeater propName='PresskitEntry' />
       </div>
     </div>
   );
@@ -95,6 +96,11 @@ const Presskit: types.Brick<PresskitProps> = ({ videoLink }) => {
 Presskit.schema = {
   name: "presskit",
   label: "Press Kit",
+  repeaterItems: [{
+    name: 'PresskitEntry',
+    itemType: 'PresskitEntry',
+    itemLabel: 'Entry',
+  }],
   getDefaultProps: () => ({
     developerTitle: 'Developer',
     developerName: 'Paper Cat Games',
@@ -105,6 +111,15 @@ Presskit.schema = {
     platforms: 'Steam, PC',
     trailer: 'Trailer',
     videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
+    PresskitEntry: [
+      {
+        PresskitEntryTitle: [
+          {
+            title: 'Description'
+          }
+        ]
+      }
+    ]
   }),
 }
 

@@ -33,7 +33,7 @@
 }
 .mainbarEntry {
   background: #402278;
-  border-radius: 2rem;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   margin-top: 5%;
