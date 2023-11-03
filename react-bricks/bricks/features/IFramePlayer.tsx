@@ -4,13 +4,14 @@ import styles from "../../../css/Home.module.css";
 
 interface IFramePlayerProps {
   videoLink: string;
+  classname: string;
 }
-const IFramePlayer: types.Brick<IFramePlayerProps> =({ videoLink }) => (
+const IFramePlayer: types.Brick<IFramePlayerProps> =({ videoLink, classname }) => (
   <iframe
     src={videoLink}
     title="YouTube video player"
     allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    className={styles.bannerVideo}
+    className={classname}
   />
 );
 

@@ -1,0 +1,76 @@
+.h3 {
+  font-family: var(--text-primary);
+  font-size: 2rem;
+  text-shadow: rgba(0, 0, 0, 0.5) -5px 5px 5px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.presskitContent {
+  justify-content: space-between;
+  background: linear-gradient(to top, #884CF5, #4E229C);
+  display: flex;
+  padding: 4%;
+}
+.presskitSidebar {
+  flex-basis: 25%;
+}
+.sidebarContainer {
+  margin-bottom: 1.5rem;
+}
+.pressParagraph {
+  font-family: var(--text-tertiary);
+}
+.presskitMainbar {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 73%;
+}
+.mainbarEntry {
+  background: #402278;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  padding: 4%;
+}
+.presskitFeatures {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.gameImages {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.screenshot {
+  margin-bottom: 2%;
+  width: 40%;
+}
+.screenshot:hover {
+  cursor: pointer;
+}
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.trailer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .presskitContent {
+    flex-direction: column;
+  }
+}
