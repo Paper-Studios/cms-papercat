@@ -23,3 +23,22 @@
   margin: 0;
   margin-bottom: 0.5rem;
 }
+
+.text {
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.75rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 150ms;
+  cursor: default;
+}
+
+.text:hover {
+  color: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+.adminText {
+  color: black;
+}

@@ -1,14 +1,15 @@
 import React from "react"
-import { Text, Repeater, types } from "react-bricks/frontend"
+import { Text, Repeater, types, useAdminContext } from "react-bricks/frontend"
 
 import styles from "../../../css/Footer.module.css"
 
 interface FooterProps {}
 
 const Footer: types.Brick<FooterProps> = ({}) => {
+  const { isAdmin, previewMode } = useAdminContext();
   return (
     <footer className={styles.footer}>
-      <section className={styles.footerSectionTitle}>
+      <section className={isAdmin && !previewMode ? `${styles.adminText} ${styles.footerSectionTitle}` : styles.footerSectionTitle}>
         <Text
           propName="title"
           placeholder=""
@@ -38,7 +39,7 @@ Footer.schema = {
     {
       name: "columns",
       itemType: "footer-column",
-      max: 4,
+      max: 3,
     },
   ],
   getDefaultProps: () => ({
@@ -46,85 +47,49 @@ Footer.schema = {
     copyright: "©2023 CA, USA",
     columns: [
       {
-        title: "Company",
         links: [
           {
-            linkText: "About us",
-            linkPath: "/",
+            linkText: "About the Team",
+            linkPath: "/team",
           },
           {
-            linkText: "Why React Bricks?",
-            linkPath: "/",
+            linkText: "Released Games",
+            linkPath: "/games",
           },
           {
-            linkText: "Terms of service",
-            linkPath: "/",
-          },
-          {
-            linkText: "Privacy",
-            linkPath: "/",
+            linkText: "Blog and Updates",
+            linkPath: "/blog",
           },
         ],
       },
       {
-        title: "Features",
         links: [
           {
-            linkText: "Visual editing",
-            linkPath: "/",
+            linkText: "Contact Info",
           },
           {
-            linkText: "React components",
-            linkPath: "/",
+            linkText: "officialemail@email.com",
           },
           {
-            linkText: "Enterprise-ready",
-            linkPath: "/",
-          },
-          {
-            linkText: "Roadmap",
-            linkPath: "/",
+            linkText: "(123) 456-7890",
           },
         ],
       },
       {
-        title: "Use cases",
         links: [
           {
-            linkText: "Content editors",
-            linkPath: "/",
-          },
-          {
-            linkText: "Developers",
-            linkPath: "/",
-          },
-          {
-            linkText: "Enterprises",
-            linkPath: "/",
+            linkText: "Download our latest",
           },
         ],
-      },
-      {
-        title: "Learn",
-        links: [
+        buttons: [
           {
-            linkText: "Tutorial",
-            linkPath: "/",
-          },
-          {
-            linkText: "Documentation",
-            linkPath: "/",
-          },
-          {
-            linkText: "Videos",
-            linkPath: "/",
-          },
-          {
-            linkText: "Blog",
-            linkPath: "/",
-          },
-        ],
-      },
+            buttonType: 'download',
+            text: 'Press Kit',
+            icon: 'download',
+            size: 'normal',
+          }
+        ]
+      }
     ],
   }),
   sideEditProps: [],

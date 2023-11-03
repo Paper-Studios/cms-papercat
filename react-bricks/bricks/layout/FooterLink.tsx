@@ -1,24 +1,30 @@
 import React from "react"
-import { Text, types, Link } from "react-bricks/frontend"
+import { RichText, types, useAdminContext } from "react-bricks/frontend"
 
-import styles from "../../../css/FooterLink.module.css"
+import styles from "../../../css/Footer.module.css"
 
-interface FooterLinkProps {
-  linkPath: string
-}
+interface FooterLinkProps {}
 
-const FooterLink: types.Brick<FooterLinkProps> = ({ linkPath }) => {
+const FooterLink: types.Brick<FooterLinkProps> = () => {
+  const { isAdmin, previewMode } = useAdminContext();
+
   return (
-    <Link href={linkPath}>
-      <Text
-        propName='linkText'
-        placeholder='Link...'
-        renderBlock={({ children }) => (
-          <div className={styles.text}>{children}</div>
-        )}
-      />
-    </Link>
-  )
+    <RichText
+      propName='linkText'
+      placeholder='Text...'
+      renderBlock={({ children }) => (
+        <span className={isAdmin && !previewMode ? `${styles.adminText} ${styles.text}` : styles.text}>{children}</span>
+      )}
+      allowedFeatures={[
+        types.RichTextFeatures.Bold,
+        types.RichTextFeatures.Highlight,
+        types.RichTextFeatures.Link
+      ]}
+      renderHighlight={({ children }) => (
+        <span style={{ color: '#F5647F' }}>{children}</span>
+      )}
+    />
+  );
 }
 
 FooterLink.schema = {
@@ -26,22 +32,9 @@ FooterLink.schema = {
   label: "Link",
   category: "layout",
   hideFromAddMenu: true,
-  // tags: [],
-
-  // Defaults when a new brick is added
   getDefaultProps: () => ({
-    linkText: "Pricing",
-    linkPath: "/",
-  }),
-
-  // Sidebar Edit controls for props
-  sideEditProps: [
-    {
-      name: "linkPath",
-      label: "Link to...",
-      type: types.SideEditPropType.Text,
-    },
-  ],
+    linkText: "Text or Link!",
+  })
 }
 
 export default FooterLink
