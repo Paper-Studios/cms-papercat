@@ -1,41 +1,31 @@
 import React from "react"
-import { RichText, Image, Repeater, types, Link } from "react-bricks/frontend"
+import { Text, Repeater, types, useAdminContext } from "react-bricks/frontend"
 
 import styles from "../../../css/Footer.module.css"
 
 interface FooterProps {}
 
 const Footer: types.Brick<FooterProps> = ({}) => {
+  const { isAdmin, previewMode } = useAdminContext();
   return (
-    <footer>
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <div className={styles.elementsInfo}>
-            <Link href='/' className={styles.linkLogo}>
-              <Image
-                propName='logo'
-                alt='Logo'
-                maxWidth={300}
-                imageClassName={styles.imageLogo}
-              />
-            </Link>
-            <RichText
-              propName='copyright'
-              placeholder='Copyright notice'
-              renderBlock={({ children }) => (
-                <p className={styles.paragraphRichText}>{children}</p>
-              )}
-              allowedFeatures={[types.RichTextFeatures.Link]}
-              renderLink={({ children, href }) => (
-                <Link href={href} className={styles.renderLink}>
-                  {children}
-                </Link>
-              )}
-            />
-          </div>
-          <Repeater propName='columns' />
-        </div>
+    <footer className={styles.footer}>
+      <section className={isAdmin && !previewMode ? `${styles.adminText} ${styles.footerSectionTitle}` : styles.footerSectionTitle}>
+        <Text
+          propName="title"
+          placeholder=""
+          renderBlock={({ children }) => (
+            <h3 className={styles.footerTitle}>{children}</h3>
+          )}
+        />
+        <Text
+          propName="copyright"
+          placeholder=""
+          renderBlock={({ children }) => (
+            <span>{children}</span>
+          )}
+        />
       </section>
+      <Repeater propName="columns" />
     </footer>
   )
 }
@@ -49,124 +39,59 @@ Footer.schema = {
     {
       name: "columns",
       itemType: "footer-column",
-      max: 4,
+      max: 3,
     },
   ],
-  // Defaults when a new brick is added
   getDefaultProps: () => ({
-    logo: {
-      src: "https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg",
-      placeholderSrc:
-        "https://images.reactbricks.com/original/7fd7ef1a-928f-45d6-b7a7-ff34bf91c15e.svg",
-      srcSet: "",
-      alt: "React Bricks",
-      seoName: "react-bricks",
-      width: 1700.787,
-      height: 377.953,
-    },
-    copyright: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            text: "© React Bricks, Inc.",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        children: [
-          {
-            text: "Proudly made in Italy",
-          },
-        ],
-      },
-    ],
+    title: "Paper Cat Games",
+    copyright: "©2023 CA, USA",
     columns: [
       {
-        title: "Company",
         links: [
           {
-            linkText: "About us",
-            linkPath: "/",
+            linkText: "About the Team",
+            linkPath: "/team",
           },
           {
-            linkText: "Why React Bricks?",
-            linkPath: "/",
+            linkText: "Released Games",
+            linkPath: "/games",
           },
           {
-            linkText: "Terms of service",
-            linkPath: "/",
-          },
-          {
-            linkText: "Privacy",
-            linkPath: "/",
+            linkText: "Blog and Updates",
+            linkPath: "/blog",
           },
         ],
       },
       {
-        title: "Features",
         links: [
           {
-            linkText: "Visual editing",
-            linkPath: "/",
+            linkText: "Contact Info",
           },
           {
-            linkText: "React components",
-            linkPath: "/",
+            linkText: "officialemail@email.com",
           },
           {
-            linkText: "Enterprise-ready",
-            linkPath: "/",
-          },
-          {
-            linkText: "Roadmap",
-            linkPath: "/",
+            linkText: "(123) 456-7890",
           },
         ],
       },
       {
-        title: "Use cases",
         links: [
           {
-            linkText: "Content editors",
-            linkPath: "/",
-          },
-          {
-            linkText: "Developers",
-            linkPath: "/",
-          },
-          {
-            linkText: "Enterprises",
-            linkPath: "/",
+            linkText: "Download our latest",
           },
         ],
-      },
-      {
-        title: "Learn",
-        links: [
+        buttons: [
           {
-            linkText: "Tutorial",
-            linkPath: "/",
-          },
-          {
-            linkText: "Documentation",
-            linkPath: "/",
-          },
-          {
-            linkText: "Videos",
-            linkPath: "/",
-          },
-          {
-            linkText: "Blog",
-            linkPath: "/",
-          },
-        ],
-      },
+            buttonType: 'download',
+            text: 'Press Kit',
+            icon: 'download',
+            size: 'normal',
+          }
+        ]
+      }
     ],
   }),
-
-  // Sidebar Edit controls for props
   sideEditProps: [],
 }
 
