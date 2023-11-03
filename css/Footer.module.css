@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 8% 0;
   filter: opacity(0.8);
 }
@@ -41,4 +42,30 @@
 
 .adminText {
   color: black;
+}
+
+@media screen and (max-width: 850px) {
+  .footerSection {
+    margin-top: 1.5rem;
+    border-left: 1px solid white;
+    padding-left: .75rem;
+  }
+  .footerSectionTitle {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footerSection {
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid white;
+  }
+  .footerSectionTitle {
+    align-items: center;
+  }
 }
