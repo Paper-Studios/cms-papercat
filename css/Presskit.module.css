@@ -11,6 +11,12 @@
   font-size: 1.5rem;
 }
 
+.p {
+  font-family: var(--text-tertiary);
+  font-size: 1.1rem;
+  margin: 10px;
+}
+
 .presskitContent {
   justify-content: space-between;
   background: linear-gradient(to top, #884CF5, #4E229C);
