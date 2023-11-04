@@ -30,7 +30,7 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
           imageClassName={styles.headerimg}
           aspectRatio={2.21}
         />
-        <IFramePlayer videoLink={videoLink} />
+        <IFramePlayer videoLink={videoLink} classname={styles.bannerVideo}/>
       </div>
       <div className={styles.blurb}>
         <Text

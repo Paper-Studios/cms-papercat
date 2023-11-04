@@ -3,6 +3,10 @@ import layout from "./layout"
 import Home from "./Home"
 import Team from "./Team"
 import TeamMember from "./TeamMember"
+import Presskit from "./Presskit"
+import PresskitEntry from "./PresskitEntry"
+import PressEntryTitle from "./PressEntryTitle"
+import PressEntryParagraph from "./PressEntryParagraph"
 import features from "./features"
 
 // const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]
@@ -22,6 +26,10 @@ const bricks: types.Theme[] = [
       {
         categoryName: 'Team Section',
         bricks: [Team, TeamMember]
+      },
+      {
+        categoryName: 'Presskit Section',
+        bricks: [Presskit, PresskitEntry, PressEntryTitle, PressEntryParagraph]
       },
     ],
   },
