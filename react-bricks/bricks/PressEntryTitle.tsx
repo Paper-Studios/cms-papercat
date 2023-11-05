@@ -22,6 +22,7 @@ const PressEntryTitle: types.Brick<PressEntryTitleProps> = () => {
 PressEntryTitle.schema = {
   name: 'PresskitEntryTitle',
   label: 'Presskit Entry Title',
+  hideFromAddMenu: true,
 }
 
 export default PressEntryTitle

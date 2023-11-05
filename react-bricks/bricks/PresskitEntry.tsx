@@ -12,6 +12,9 @@ const PresskitEntry: types.Brick<PresskitEntryProps> = () => {
     <div className={styles.mainbarEntry}>
       <Repeater propName='PresskitEntryTitle' />
       <Repeater propName='PresskitEntryParagraph' />
+      <div className={styles.gameImages}>
+        <Repeater propName='PressEntryImage' />
+      </div>
     </div>
   )
 }
@@ -19,6 +22,7 @@ const PresskitEntry: types.Brick<PresskitEntryProps> = () => {
 PresskitEntry.schema = {
   name: 'PresskitEntry',
   label: 'Presskit Entry',
+  hideFromAddMenu: true,
   repeaterItems: [
     {
       name: 'PresskitEntryTitle',
@@ -30,15 +34,17 @@ PresskitEntry.schema = {
       name: 'PresskitEntryParagraph',
       itemType: 'PresskitEntryParagraph',
       itemLabel: 'Entry Paragraph',
+    },
+    {
+      name: 'PressEntryImage',
+      itemType: 'PressEntryImage',
+      itemLabel: 'Game Image',
     }
   ],
   getDefaultProps: () => ({
     PresskitEntryTitle: [{
       title: 'Title Goes Here'
     }],
-    PresskitEntryParagraph: [{
-      paragraph: 'Write your paragraph or description here.'
-    }]
   }),
 }
 
