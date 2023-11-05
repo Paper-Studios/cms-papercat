@@ -151,6 +151,13 @@ Presskit.schema = {
           { paragraph: "• Befriend a cat! (the most important part of any game)" },
         ]
       },
+      {
+        PresskitEntryTitle: [
+          {
+            title: 'Images'
+          }
+        ],
+      }
     ]
   }),
 }

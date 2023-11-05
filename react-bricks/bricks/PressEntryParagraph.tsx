@@ -31,9 +31,10 @@ const PressEntryParagraph: types.Brick<PressEntryParagraphProps> = () => {
 PressEntryParagraph.schema = {
   name: 'PresskitEntryParagraph',
   label: 'Presskit Entry Paragraph',
+  hideFromAddMenu: true,
   getDefaultProps: () => ({
     paragraph: 'Write your paragraph or description here.'
-  })
+  }),
 }
 
 export default PressEntryParagraph

@@ -7,6 +7,7 @@ import Presskit from "./Presskit"
 import PresskitEntry from "./PresskitEntry"
 import PressEntryTitle from "./PressEntryTitle"
 import PressEntryParagraph from "./PressEntryParagraph"
+import PressEntryImage from "./PressEntryImage"
 import features from "./features"
 
 // const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]
@@ -29,7 +30,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Presskit Section',
-        bricks: [Presskit, PresskitEntry, PressEntryTitle, PressEntryParagraph]
+        bricks: [Presskit, PresskitEntry, PressEntryTitle, PressEntryParagraph, PressEntryImage]
       },
     ],
   },
