@@ -13,10 +13,10 @@ const PressEntryImage: types.Brick<PressEntryImageProps> = () => {
        alt='Gameplay'
        imageClassName={styles.screenshot}
        renderWrapper={({ children }) => {
-          // extract url from this particular image stored in react bricks repo
+          // extract url from this particular image stored in react bricks repo (webp format)
           const url = Object.values(Object.values(Object.values(children)[4].children[0])[4])[0];
           return (
-            <div className={styles.imgWrapper} onClick={() => {console.log('CLICK!', url)}}>{children}</div>
+            <a href={url} download className={styles.imgWrapper}>{children}</a>
           );
        }}
     />
