@@ -16,7 +16,7 @@ const PressEntryImage: types.Brick<PressEntryImageProps> = () => {
           // extract url from this particular image stored in react bricks repo
           const url = Object.values(Object.values(Object.values(children)[4].children[0])[4])[0];
           return (
-            <div onClick={() => {console.log('CLICK!', url)}}>{children}</div>
+            <div className={styles.imgWrapper} onClick={() => {console.log('CLICK!', url)}}>{children}</div>
           );
        }}
     />
