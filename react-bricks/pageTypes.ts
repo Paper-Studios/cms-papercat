@@ -18,13 +18,6 @@ const pageTypes: types.IPageType[] = [
       'title',
       'paragraph',
       'big-image',
-      'video',
-      'code',
-      'tweet',
-      'tweet-light',
-      'blog-title',
-      'newsletter-subscribe',
-      'external-data-example',
     ],
   },
   {
