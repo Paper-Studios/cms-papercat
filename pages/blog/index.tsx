@@ -40,17 +40,17 @@ const BlogList: React.FC<HomeProps> = ({
   return (
     <>
       {!errorNoKeys && (
-        <>
+        <div style={{width: '100%'}}>
           <Head>
             <title>Posts</title>
             <meta name="description" content="Paper Cat Blog" />
           </Head>
-          {headerOk && !errorHeader ? (
+          {/* {headerOk && !errorHeader ? (
             <PageViewer page={headerOk} showClickToEdit={false} />
           ) : (
             <ErrorNoHeader />
-          )}
-          <div className={styles.blogContent}>
+          )} */}
+          <div className={styles.blogContent} style={{ width: '100%' }}>
             <h2 className={styles.blogHeader}>Our latest articles</h2>
             <div className={styles.blogEntryRow}>
               {posts?.map((post) => {
@@ -68,11 +68,11 @@ const BlogList: React.FC<HomeProps> = ({
             </div>
           </div>
           {footerOk && !errorFooter ? (
-            <PageViewer page={footerOk} showClickToEdit={false} />
+            <PageViewer page={footerOk} showClickToEdit={false}/>
           ) : (
             <ErrorNoFooter />
           )}
-        </>
+        </div>
       )}
       {errorNoKeys && <ErrorNoKeys />}
     </>

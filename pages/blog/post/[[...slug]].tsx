@@ -48,11 +48,11 @@ const Page: React.FC<PageProps> = ({
             <title>{page.meta.title}</title>
             <meta name="description" content={page.meta.description} />
           </Head>
-          {headerOk && !errorHeader ? (
+          {/* {headerOk && !errorHeader ? (
             <PageViewer page={headerOk} showClickToEdit={false} />
           ) : (
             <ErrorNoHeader />
-          )}
+          )} */}
           <PageViewer page={pageOk} />
           {footerOk && !errorFooter ? (
             <PageViewer page={footerOk} showClickToEdit={false} />
