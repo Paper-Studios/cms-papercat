@@ -39,7 +39,7 @@ const PostListItem: React.FC<PostListItemProps> = ({
 
       <div className={styles.moreInfoContainer}>
         <span>{dayjs(date).format('MMM DD YYYY')}</span>
-        <ButtonX type="button" buttonType="link" href={`/blog/post/${href}`} size="small" form={false}/>
+        <ButtonX type="button" buttonType="link" href={`/blog/post/${href}`} size="small" form={false} text="Read more"/>
       </div>
     </Link>
   )
