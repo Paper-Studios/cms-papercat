@@ -193,6 +193,7 @@
 .homeScreenshots img {
   width: 93%;
   height: auto;
+  margin-top: 5%;
 }
 
 @media screen and (max-width: 1536px) {
