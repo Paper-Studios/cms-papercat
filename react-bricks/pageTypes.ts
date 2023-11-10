@@ -9,6 +9,18 @@ const pageTypes: types.IPageType[] = [
     getDefaultContent: () => [],
   },
   {
+    name: 'blog',
+    pluralName: 'Blog',
+    defaultLocked: false,
+    defaultStatus: types.PageStatus.Published,
+    getDefaultContent: () => [],
+    allowedBlockTypes: [
+      'title',
+      'paragraph',
+      'big-image',
+    ],
+  },
+  {
     name: "layout",
     pluralName: "layout",
     defaultLocked: false,

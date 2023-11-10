@@ -20,7 +20,6 @@ const config: types.ReactBricksConfig = {
     welcomeText: "Welcome back, Paper Cat!",
   },
   contentClassName: "",
-  //defaultTheme: "",
   renderLocalLink: NextLink,
   navigate: (path: string) => Router.push(path),
   loginPath: "/admin",

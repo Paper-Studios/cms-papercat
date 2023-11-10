@@ -11,6 +11,7 @@ export interface ButtonXProps {
   href?: string
   className?: string
   isTargetBlank?: boolean
+  text?: string
   form: boolean
   buttonType: 'submit' | 'link' | 'download'
   type: 'button' | 'submit'
@@ -22,6 +23,7 @@ const ButtonX: types.Brick<ButtonXProps> = ({
   href,
   className,
   isTargetBlank,
+  text,
   form,
   buttonType,
   type,
@@ -67,11 +69,13 @@ const ButtonX: types.Brick<ButtonXProps> = ({
         type='button'
       >
         {iconSymbol && iconSymbol}
-        <Text
-          propName="text"
-          placeholder=""
-          renderBlock={({ children }) => <span>{children}</span>}
-        />
+        { text ? text :
+          <Text
+            propName="text"
+            placeholder=""
+            renderBlock={({ children }) => <span>{children}</span>}
+          />
+        }
       </Link>
     );
   }
