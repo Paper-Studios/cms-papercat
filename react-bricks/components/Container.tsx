@@ -6,17 +6,17 @@ export type Padding = '0' | '6' | '8' | '10' | '12' | '16' | '20'
 const getPadding = (padding: Padding): string => {
   switch (padding) {
     case '20':
-      return '400px'
+      return '128px'
     case '16':
-      return '320px'
+      return '102px'
     case '12':
-      return '240px'
+      return '82px'
     case '10':
-      return '200px'
+      return '65px'
     case '8':
-      return '160px'
+      return '52px'
     case '6':
-      return '120px'
+      return '42px'
     case '0':
       return '0'
     default:
@@ -28,13 +28,15 @@ const getPadding = (padding: Padding): string => {
 const getMargin = (size: Size) => {
   switch (size) {
     case 'medium': {
-      return '0 8%'
+      // return '0 8%'
+      return '84%'
     }
     case 'small': {
-      return '0 19%'
+      // return '0 19%'
+      return '62%'
     }
     case 'full': {
-      return '0'
+      return '100%'
     }
   }
 }
@@ -48,9 +50,9 @@ export interface ContainerProps {
 }
 
 const Container: React.FC<ContainerProps> = ({
-  size = 'medium',
-  paddingTop = '16',
-  paddingBottom = '16',
+  size = 'small',
+  paddingTop = '8',
+  paddingBottom = '8',
   className,
   children,
 }) => {
@@ -60,7 +62,7 @@ const Container: React.FC<ContainerProps> = ({
       style={{
         paddingTop: getPadding(paddingTop),
         paddingBottom: getPadding(paddingBottom),
-        margin: getMargin(size),
+        width: getMargin(size),
       }}
     >
       {children}

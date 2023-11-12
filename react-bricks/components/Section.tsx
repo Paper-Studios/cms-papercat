@@ -34,14 +34,14 @@ const Section: React.FC<SectionProps> = ({
   children,
 }) => {
   return (
-    <section className={className} style={{ backgroundColor }}>
+    <section className={className} style={{ backgroundColor, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       {borderTop !== 'none' && (
         <Container
           size={borderTop === 'boxed' ? 'medium' : 'full'}
           paddingBottom="0"
           paddingTop="0"
         >
-        <hr style={{ border: '10px solid black' }} />
+        <hr style={{ border: '1px solid red' }} />
         </Container>
       )}
       {children}
@@ -51,7 +51,7 @@ const Section: React.FC<SectionProps> = ({
           paddingBottom="0"
           paddingTop="0"
         >
-        <hr style={{ border: '10px solid black' }} />
+        <hr style={{ border: '1px solid red', width: '100%' }} />
         </Container>
       )}
     </section>

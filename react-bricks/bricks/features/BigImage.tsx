@@ -15,8 +15,8 @@ const photo = {
     'https://images.reactbricks.com/placeholder/71fd29e5-d54d-4c99-a2da-681bd8d888d1.jpg',
   srcSet:
     'https://images.reactbricks.com/src_set/71fd29e5-d54d-4c99-a2da-681bd8d888d1-1080.webp 1080w,\nhttps://images.reactbricks.com/src_set/71fd29e5-d54d-4c99-a2da-681bd8d888d1-600.webp 600w,\nhttps://images.reactbricks.com/src_set/71fd29e5-d54d-4c99-a2da-681bd8d888d1-300.webp 300w',
-  width: 100,
-  height: 100,
+  width: 1080,
+  height: 606,
   alt: 'aerial photography of islands during daytime',
   seoName: 'seaside',
 };
@@ -49,7 +49,7 @@ const BigImage: types.Brick<BigImageProps> = ({
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
       >
-        <Image propName="image3" alt="Image" maxWidth={200} aspectRatio={1.5}/>
+        <Image propName="image3" alt="Image" imageStyle={{ width: '100%', height: 'auto' }}/>
       </Container>
     </Section>
   )
@@ -63,9 +63,9 @@ BigImage.schema = {
   previewImageUrl: '/bricks-preview-images/big-image.png',
   getDefaultProps: () => ({
     ...sectionDefaults,
-    width: 'small',
-    paddingTop: '12',
-    paddingBottom: '12',
+    width: 'medium',
+    paddingTop: '6',
+    paddingBottom: '6',
     image3: photo,
   }),
   sideEditProps: [
@@ -76,7 +76,7 @@ BigImage.schema = {
       selectOptions: {
         display: types.OptionsDisplay.Color,
         options: [
-          { value: '#402278', label: '#402278' },
+          { value: '#402278', label: 'Dark Purple' },
           { value: '#884CF5', label: 'Bright Purple' },
           { value: '#ffffff', label: 'White' },
           { value: '#F5647F', label: 'Red' },
