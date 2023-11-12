@@ -43,7 +43,7 @@ const Page: React.FC<PageProps> = ({
   return (
     <>
       {pageOk && !errorPage && !errorNoKeys && (
-        <>
+        <div style={{ width: '100%' }}>
           <Head>
             <title>{page.meta.title}</title>
             <meta name="description" content={page.meta.description} />
@@ -59,7 +59,7 @@ const Page: React.FC<PageProps> = ({
           ) : (
             <ErrorNoFooter />
           )}
-        </>
+        </div>
       )}
       {errorNoKeys && <ErrorNoKeys />}
     </>

@@ -27,13 +27,14 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({
+  backgroundColor,
   borderTop = 'none',
   borderBottom = 'none',
   className = '',
   children,
 }) => {
   return (
-    <section className={className}>
+    <section className={className} style={{ backgroundColor }}>
       {borderTop !== 'none' && (
         <Container
           size={borderTop === 'boxed' ? 'medium' : 'full'}

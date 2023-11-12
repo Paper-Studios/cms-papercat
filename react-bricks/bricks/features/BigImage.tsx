@@ -49,7 +49,7 @@ const BigImage: types.Brick<BigImageProps> = ({
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
       >
-        <Image propName="image" alt="Image" maxWidth={200} aspectRatio={1.5}/>
+        <Image propName="image3" alt="Image" maxWidth={200} aspectRatio={1.5}/>
       </Container>
     </Section>
   )
@@ -66,7 +66,7 @@ BigImage.schema = {
     width: 'small',
     paddingTop: '12',
     paddingBottom: '12',
-    image: photo,
+    image3: photo,
   }),
   sideEditProps: [
     {
