@@ -9,6 +9,7 @@ import PressEntryTitle from "./PressEntryTitle"
 import PressEntryParagraph from "./PressEntryParagraph"
 import PressEntryImage from "./PressEntryImage"
 import BigImage from "./features/BigImage"
+import Title from "./features/Title"
 import features from "./features"
 
 // const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]
@@ -36,7 +37,7 @@ const bricks: types.Theme[] = [
       {
         categoryName: 'Single column / Blog',
         bricks: [
-          // Title,
+          Title,
           // Paragraph,
           BigImage,
         ],
