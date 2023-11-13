@@ -13,7 +13,7 @@ export interface ButtonXProps {
   isTargetBlank?: boolean
   text?: string
   form: boolean
-  buttonType: 'submit' | 'link' | 'download'
+  buttonType: 'submit' | 'link' | 'download' | 'button'
   type: 'button' | 'submit'
   size: 'normal' | 'small'
 }
@@ -129,11 +129,13 @@ const ButtonX: types.Brick<ButtonXProps> = ({
       form={form ? 'contact-form' : undefined}
     >
       {iconSymbol && iconSymbol}
-      <Text
-        propName="text"
-        placeholder=""
-        renderBlock={({ children }) => <span>{children}</span>}
-      />
+      {text ? text :
+        <Text
+          propName="text"
+          placeholder=""
+          renderBlock={({ children }) => <span>{children}</span>}
+        />
+      }
     </button>
   )
 }

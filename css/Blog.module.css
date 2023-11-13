@@ -32,6 +32,10 @@
   margin: 2%;
   position: relative;
 }
+.blogEntry:hover {
+  color: white;
+  border-width: 5px;
+}
 .blogEntry:before {
   content: '';
   background-color: var(--color-secondary);
