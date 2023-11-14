@@ -11,14 +11,12 @@ import {
 
 import PostListItem from '../../components/PostListItem'
 import ErrorNoFooter from '../../components/errorNoFooter'
-import ErrorNoHeader from '../../components/errorNoHeader'
 import ErrorNoKeys from '../../components/errorNoKeys'
 import config from '../../react-bricks/config'
 import styles from '../../css/Blog.module.css'
 
 interface HomeProps {
   errorNoKeys: string
-  errorHeader: string
   errorFooter: string
   posts: types.Page[]
   header: types.Page
@@ -28,13 +26,11 @@ interface HomeProps {
 const BlogList: React.FC<HomeProps> = ({
   posts,
   errorNoKeys,
-  errorHeader,
   errorFooter,
   header,
   footer,
 }) => {
   const { pageTypes, bricks } = useReactBricksContext()
-  const headerOk = header ? cleanPage(header, pageTypes, bricks) : null
   const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
 
   return (
@@ -45,11 +41,6 @@ const BlogList: React.FC<HomeProps> = ({
             <title>Posts</title>
             <meta name="description" content="Paper Cat Blog" />
           </Head>
-          {/* {headerOk && !errorHeader ? (
-            <PageViewer page={headerOk} showClickToEdit={false} />
-          ) : (
-            <ErrorNoHeader />
-          )} */}
           <div className={styles.blogContent} style={{ width: '100%' }}>
             <h2 className={styles.blogHeader}>Our latest articles</h2>
             <div className={styles.blogEntryRow}>
@@ -98,7 +89,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     })
 
     header = await fetchPage('header', config.apiKey, context.locale).catch(() => {
-        errorHeader = true
         return {}
       }
     )
@@ -109,9 +99,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }
     )
 
-    return { props: { posts, header, footer, errorHeader, errorFooter } }
+    return { props: { posts, header, footer, errorFooter } }
   } catch {
-    return { props: { header, footer, errorHeader, errorFooter } }
+    return { props: { header, footer, errorFooter } }
   }
 }
 

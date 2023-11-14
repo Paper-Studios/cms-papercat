@@ -10,7 +10,6 @@ import {
 } from 'react-bricks/frontend'
 
 import ErrorNoFooter from '../components/errorNoFooter'
-import ErrorNoHeader from '../components/errorNoHeader'
 import ErrorNoKeys from '../components/errorNoKeys'
 import config from '../react-bricks/config'
 
@@ -21,7 +20,6 @@ interface PageProps {
   footer: types.Page
   errorNoKeys: boolean
   errorPage: boolean
-  errorHeader: boolean
   errorFooter: boolean
 }
 
@@ -31,14 +29,12 @@ const Page: React.FC<PageProps> = ({
   footer,
   errorNoKeys,
   errorPage,
-  errorHeader,
   errorFooter,
 }) => {
   // Clean the received content
   // Removes unknown or not allowed bricks
   const { pageTypes, bricks } = useReactBricksContext()
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
-  const headerOk = header ? cleanPage(header, pageTypes, bricks) : null
   const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
 
   return (
@@ -49,11 +45,6 @@ const Page: React.FC<PageProps> = ({
             <title>{page.meta.title}</title>
             <meta name="description" content={page.meta.description} />
           </Head>
-          {/* {headerOk && !errorHeader ? (
-            <PageViewer page={headerOk} showClickToEdit={false} />
-          ) : (
-            <ErrorNoHeader />
-          )} */}
           <PageViewer page={pageOk} />
           {footerOk && !errorFooter ? (
             <PageViewer page={footerOk} showClickToEdit={false} />
@@ -70,7 +61,6 @@ const Page: React.FC<PageProps> = ({
 export const getStaticProps: GetStaticProps = async (context) => {
   let errorNoKeys: boolean = false
   let errorPage: boolean = false
-  let errorHeader: boolean = false
   let errorFooter: boolean = false
 
   if (!config.apiKey) {
@@ -98,7 +88,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }
     ),
     fetchPage('header', config.apiKey, context.locale).catch(() => {
-      errorHeader = true
       return {}
     }),
     fetchPage('footer', config.apiKey, context.locale).catch(() => {
@@ -114,7 +103,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       footer,
       errorNoKeys,
       errorPage,
-      errorHeader,
       errorFooter,
     },
   }
