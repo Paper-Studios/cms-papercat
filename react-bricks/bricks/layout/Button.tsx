@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { Text, Link, File, types, useAdminContext } from 'react-bricks/frontend'
 
-import styles from '../../../css/ButtonX.module.css'
+import styles from '../../../css/Button.module.css'
 
 export interface ButtonXProps {
   icon?: string
