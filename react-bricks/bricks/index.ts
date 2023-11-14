@@ -10,9 +10,7 @@ import PressEntryParagraph from "./PressEntryParagraph"
 import PressEntryImage from "./PressEntryImage"
 import BigImage from "./features/BigImage"
 import Title from "./features/Title"
-import features from "./features"
-
-// const bricks: types.Brick[] = [HeroUnit, ...layout, ...features]
+import Paragraph from "./features/Paragraph"
 
 const bricks: types.Theme[] = [
   {
@@ -36,18 +34,10 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Single column / Blog',
-        bricks: [
-          Title,
-          // Paragraph,
-          BigImage,
-        ],
+        bricks: [Title, Paragraph, BigImage],
       },
     ],
   },
 ]
-
-export {
-  TeamMember,
-}
 
 export default bricks
