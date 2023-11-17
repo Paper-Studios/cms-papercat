@@ -25,14 +25,12 @@ const getPadding = (padding: Padding): string => {
 }
 
 
-const getMargin = (size: Size) => {
+const getWidth = (size: Size) => {
   switch (size) {
     case 'medium': {
-      // return '0 8%'
       return '84%'
     }
     case 'small': {
-      // return '0 19%'
       return '62%'
     }
     case 'full': {
@@ -62,7 +60,7 @@ const Container: React.FC<ContainerProps> = ({
       style={{
         paddingTop: getPadding(paddingTop),
         paddingBottom: getPadding(paddingBottom),
-        width: getMargin(size),
+        width: getWidth(size),
       }}
     >
       {children}

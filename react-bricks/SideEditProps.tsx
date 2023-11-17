@@ -1,6 +1,4 @@
 import { types } from 'react-bricks/frontend'
-import { Padding, Size } from './components/Container'
-import { Border } from './components/Section'
 
 export const containerSizeEditProps: types.ISideEditProp = {
   name: 'width',

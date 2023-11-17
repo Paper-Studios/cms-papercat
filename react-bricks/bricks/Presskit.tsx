@@ -1,6 +1,6 @@
-import React from "react";
-import { Text, types, Repeater } from "react-bricks/frontend";
-import IFramePlayer from "./features/IFramePlayer";
+import React from 'react'
+import { Text, types, Repeater } from 'react-bricks/frontend'
+import IFramePlayer from './features/IFramePlayer'
 
 import styles from '../../css/Presskit.module.css'
 
@@ -94,8 +94,8 @@ const Presskit: types.Brick<PresskitProps> = ({ videoLink }) => {
 }
 
 Presskit.schema = {
-  name: "presskit",
-  label: "Press Kit",
+  name: 'presskit',
+  label: 'Press Kit',
   repeaterItems: [{
     name: 'PresskitEntry',
     itemType: 'PresskitEntry',

@@ -1,4 +1,4 @@
-import styles from "../css/errorNoFooter.module.css"
+import styles from '../css/errorNoFooter.module.css'
 
 const ErrorNoFooter = () => {
   return (

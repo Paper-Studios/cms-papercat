@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import ButtonX from '../react-bricks/bricks/layout/ButtonX'
+import Button from '../react-bricks/bricks/layout/Button'
 import dayjs from 'dayjs'
 import styles from '../css/Blog.module.css'
 
@@ -39,7 +39,7 @@ const PostListItem: React.FC<PostListItemProps> = ({
 
       <div className={styles.moreInfoContainer}>
         <span>{dayjs(date).format('MMM DD YYYY')}</span>
-        <ButtonX type="button" buttonType="button" size="small" form={false} text="Read more"/>
+        <Button type="button" buttonType="button" size="small" form={false} text="Read more"/>
       </div>
     </Link>
   )

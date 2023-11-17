@@ -1,16 +1,16 @@
-import { types } from "react-bricks/frontend"
-import layout from "./layout"
-import Home from "./Home"
-import Team from "./Team"
-import TeamMember from "./TeamMember"
-import Presskit from "./Presskit"
-import PresskitEntry from "./PresskitEntry"
-import PressEntryTitle from "./PressEntryTitle"
-import PressEntryParagraph from "./PressEntryParagraph"
-import PressEntryImage from "./PressEntryImage"
-import BigImage from "./features/BigImage"
-import Title from "./features/Title"
-import Paragraph from "./features/Paragraph"
+import { types } from 'react-bricks/frontend'
+import layout from './layout'
+import Home from './Home'
+import Team from './Team'
+import TeamMember from './TeamMember'
+import Presskit from './Presskit'
+import PresskitEntry from './PresskitEntry'
+import PressEntryTitle from './PressEntryTitle'
+import PressEntryParagraph from './PressEntryParagraph'
+import PressEntryImage from './PressEntryImage'
+import BigImage from './features/BigImage'
+import Title from './features/Title'
+import Paragraph from './features/Paragraph'
 
 const bricks: types.Theme[] = [
   {

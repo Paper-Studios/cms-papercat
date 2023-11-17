@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, RichText, types, Repeater } from "react-bricks/frontend";
+import React from 'react'
+import { Text, RichText, types, Repeater } from 'react-bricks/frontend'
 
 import styles from '../../css/Team.module.css'
 
@@ -45,12 +45,9 @@ const Team: types.Brick<TeamProps> = () => {
   )
 };
 
-//=============================
-// Brick Schema
-//=============================
 Team.schema = {
-  name: "team",
-  label: "Team",
+  name: 'team',
+  label: 'Team',
   repeaterItems: [
     {
       name: 'TeamMember',

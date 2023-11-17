@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import FooterColumn from "./FooterColumn"
 import FooterLink from "./FooterLink"
-import ButtonX from "./ButtonX"
+import ButtonX from "./Button"
 
 const layout: types.Brick[] = [
   Navbar,

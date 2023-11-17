@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons';
-import IFramePlayer from "./features/IFramePlayer";
-import { Text, RichText, Image, types } from "react-bricks/frontend";
-import styles from "../../css/Home.module.css";
+import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons'
+import IFramePlayer from './features/IFramePlayer'
+import { Text, RichText, Image, types } from 'react-bricks/frontend'
+import styles from '../../css/Home.module.css'
 
 interface HomeProps {
   videoLink: string;
@@ -25,8 +25,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
     <div className={styles.Home}>
       <div className={styles.bannerContainer}>
         <Image
-          propName="header"
-          alt="Paper Perjury Banner"
+          propName='header'
+          alt='Paper Perjury Banner'
           imageClassName={styles.headerimg}
           aspectRatio={2.21}
         />
@@ -37,8 +37,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
           renderBlock={({ children }) => (
             <span>{children}</span>
           )}
-          propName="blurb1"
-          placeholder=""
+          propName='blurb1'
+          placeholder=''
         />
       </div>
       <div className={styles.homeContent}>
@@ -47,8 +47,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
             renderBlock={({ children }) => (
               <p className={styles.abstract}>{children}</p>
             )}
-            placeholder="Type an abstract..."
-            propName="abstract"
+            placeholder='Type an abstract...'
+            propName='abstract'
             allowedFeatures={[
               types.RichTextFeatures.Bold,
               types.RichTextFeatures.Italic,
@@ -63,8 +63,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
               renderBlock={({ children }) => (
                 <span>{children}</span>
               )}
-              propName="blurb2"
-              placeholder=""
+              propName='blurb2'
+              placeholder=''
             />
           </div>
           <div className={styles.steamContainer}>
@@ -73,23 +73,23 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
                 renderBlock={({ children }) => (
                   <h4>{children}<span> on Steam</span></h4>
                 )}
-                propName="steamTitle"
-                placeholder="Title"
+                propName='steamTitle'
+                placeholder='Title'
               />
               <img src='/assets/steamLogo.png' alt='steam logo'/>
             </div>
             <div className={styles.steamInfo}>
               <Image
-                propName="main"
-                alt="Steam Game Banner"
+                propName='main'
+                alt='Steam Game Banner'
                 aspectRatio={3.1}
               />
               <Text
                 renderBlock={({ children }) => (
                   <p>{children}</p>
                 )}
-                propName="steamDesc"
-                placeholder=""
+                propName='steamDesc'
+                placeholder=''
               />
             </div>
             <div className={styles.steamPlatformIcons}>
@@ -103,8 +103,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
                   renderBlock={({ children }) => (
                     <span>{children}</span>
                   )}
-                  propName="blackSteamBtn"
-                  placeholder=""
+                  propName='blackSteamBtn'
+                  placeholder=''
                 />
               </div>
               <a href={greenSteamBtnLink} target="blank" className={styles.steamButtonRight}>
@@ -112,8 +112,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
                   renderBlock={({ children }) => (
                     <span>{children}</span>
                   )}
-                  propName="greenSteamBtn"
-                  placeholder=""
+                  propName='greenSteamBtn'
+                  placeholder=''
                 />
               </a>
             </div>
@@ -121,14 +121,14 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
         </div>
         <div className={styles.homeScreenshots}>
           <Image
-            propName="screenshot1"
-            alt="Gameplay"
+            propName='screenshot1'
+            alt='Gameplay'
             aspectRatio={1.78}
             maxWidth={600}
           />
           <Image
-            propName="screenshot2"
-            alt="Gameplay"
+            propName='screenshot2'
+            alt='Gameplay'
             aspectRatio={1.78}
             maxWidth={600}
           />
@@ -138,12 +138,9 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
   );
 };
 
-//=============================
-// Brick Schema
-//=============================
 Home.schema = {
-  name: "home",
-  label: "Home Page",
+  name: 'home',
+  label: 'Home Page',
   category: 'layout',
   getDefaultProps: () => ({
     videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
@@ -155,7 +152,7 @@ Home.schema = {
     tinyTeam: true,
     windowsIcon: true,
     appleIcon: true,
-    blackSteamBtn: "Coming 2024",
+    blackSteamBtn: "$0.00",
     greenSteamBtn: "Add to your wishlist",
     greenSteamBtnLink: "https://store.steampowered.com/app/1919600/Paper_Perjury/"
   }),
@@ -176,16 +173,6 @@ Home.schema = {
       groupName: 'Hero Content',
       defaultOpen: false,
       props: [
-        {
-          name: 'blurb1',
-          label: 'First Title Blurb',
-          type: types.SideEditPropType.Text,
-        },
-        {
-          name: 'blurb2',
-          label: 'Second Title Blurb',
-          type: types.SideEditPropType.Text,
-        },
         {
           name: 'abstract',
           label: 'Summary of Game',
