@@ -1,8 +1,8 @@
-import React from "react"
-import Link from "next/link"
-import Button from "../react-bricks/bricks/layout/Button"
-import dayjs from "dayjs"
-import styles from "../css/Blog.module.css"
+import React from 'react'
+import Link from 'next/link'
+import Button from '../react-bricks/bricks/layout/Button'
+import dayjs from 'dayjs'
+import styles from '../css/Blog.module.css'
 
 interface PostListItemProps {
   title: string

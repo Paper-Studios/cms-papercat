@@ -27,7 +27,6 @@ const BlogList: React.FC<HomeProps> = ({
   posts,
   errorNoKeys,
   errorFooter,
-  header,
   footer,
 }) => {
   const { pageTypes, bricks } = useReactBricksContext()

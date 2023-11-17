@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React from 'react'
 import { Text } from 'react-bricks/frontend'
 
@@ -16,8 +15,8 @@ const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
   return (
     <div className={className}>
       <Text
-        propName="title"
-        placeholder=""
+        propName='title'
+        placeholder=''
         renderBlock={({ children }) => (
           <h2
             style={{
@@ -32,8 +31,8 @@ const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
         )}
       />
       <Text
-        propName="subtitle"
-        placeholder="Subtitle..."
+        propName='subtitle'
+        placeholder=''
         renderBlock={({ children }) => (
           <p
             style={{

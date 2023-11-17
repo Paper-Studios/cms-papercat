@@ -1,7 +1,7 @@
-import type { AppProps } from "next/app"
-import ReactBricksApp from "../components/ReactBricksApp"
+import type { AppProps } from 'next/app'
+import ReactBricksApp from '../components/ReactBricksApp'
 
-import "../css/style.css"
+import '../css/style.css'
 
 const MyApp = (props: AppProps) => {
   return (
