@@ -61,9 +61,6 @@ const TeamMember: types.Brick<TeamMemberProps> = () => {
   );
 }
 
-//=============================
-// Brick Schema
-//=============================
 TeamMember.schema = {
   name: 'TeamMember',
   label: 'Team Member',
