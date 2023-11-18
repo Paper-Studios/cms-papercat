@@ -3,6 +3,9 @@
 A Content Management System (CMS) benefits clients by enabling easy, user-friendly content updates without requiring any technical expertise. It also benefits developers who want to control what a client can manipulate without breaking responsiveness and will maintain integrity of the UI design.
 While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS, [React Bricks](https://reactbricks.com) offers a unique and fully customizable alternative that uses plain React components and CSS modules inside both a front-end and admin dashboard. 
 
+# About Paper Cat Games
+[-----]
+
 ## Team Members
 - [Rachel Miller](https://github.com/rkmiller131)
 - [Jin Myeong "Fox" Seo](https://github.com/yoko-8)
