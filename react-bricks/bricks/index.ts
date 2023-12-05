@@ -6,7 +6,7 @@ import TeamMember from './TeamMember'
 import Presskit from './Presskit'
 import PresskitEntry from './PresskitEntry'
 import PressEntryTitle from './PressEntryTitle'
-import PressEntryParagraph from './PressEntryParagraph'
+import EntryParagraph from './EntryParagraph'
 import PressEntryImage from './PressEntryImage'
 import BigImage from './features/BigImage'
 import Title from './features/Title'
@@ -30,7 +30,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Presskit Section',
-        bricks: [Presskit, PresskitEntry, PressEntryTitle, PressEntryParagraph, PressEntryImage]
+        bricks: [Presskit, PresskitEntry, PressEntryTitle, EntryParagraph, PressEntryImage]
       },
       {
         categoryName: 'Single column / Blog',

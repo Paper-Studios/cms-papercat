@@ -81,9 +81,6 @@ const Navbar: types.Brick<NavItemProps> = ({
   )
 }
 
-//=============================
-// Brick Schema
-//=============================
 Navbar.schema = {
   name: 'navbar',
   label: 'Navbar',
