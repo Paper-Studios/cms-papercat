@@ -3,15 +3,11 @@ import { types, Repeater } from 'react-bricks/frontend'
 
 import styles from '../../css/Presskit.module.css'
 
-interface PresskitEntryProps {
-
-}
-
-const PresskitEntry: types.Brick<PresskitEntryProps> = () => {
+const PresskitEntry: types.Brick = () => {
   return (
     <div className={styles.mainbarEntry}>
       <Repeater propName='PresskitEntryTitle' />
-      <Repeater propName='PresskitEntryParagraph' />
+      <Repeater propName='EntryParagraph' />
       <div className={styles.gameImages}>
         <Repeater propName='PressEntryImage' />
       </div>
@@ -31,8 +27,8 @@ PresskitEntry.schema = {
       max: 1
     },
     {
-      name: 'PresskitEntryParagraph',
-      itemType: 'PresskitEntryParagraph',
+      name: 'EntryParagraph',
+      itemType: 'EntryParagraph',
       itemLabel: 'Entry Paragraph',
     },
     {

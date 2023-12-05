@@ -6,7 +6,7 @@ import { Text, Link, File, types, useAdminContext } from 'react-bricks/frontend'
 
 import styles from '../../../css/Button.module.css'
 
-export interface ButtonXProps {
+export interface ButtonProps {
   icon?: string
   href?: string
   className?: string
@@ -18,7 +18,7 @@ export interface ButtonXProps {
   size: 'normal' | 'small'
 }
 
-const ButtonX: types.Brick<ButtonXProps> = ({
+const Button: types.Brick<ButtonProps> = ({
   icon,
   href,
   className,
@@ -140,7 +140,7 @@ const ButtonX: types.Brick<ButtonXProps> = ({
   )
 }
 
-ButtonX.schema = {
+Button.schema = {
   name: 'button',
   label: 'Button',
   category: 'shared',
@@ -231,4 +231,4 @@ ButtonX.schema = {
   ],
 }
 
-export default ButtonX
+export default Button

@@ -3,11 +3,7 @@ import { types, RichText } from 'react-bricks/frontend'
 
 import styles from '../../css/Presskit.module.css'
 
-interface PressEntryParagraphProps {
-
-}
-
-const PressEntryParagraph: types.Brick<PressEntryParagraphProps> = () => {
+const EntryParagraph: types.Brick = () => {
   return (
     <RichText
       propName='paragraph'
@@ -28,13 +24,13 @@ const PressEntryParagraph: types.Brick<PressEntryParagraphProps> = () => {
   )
 }
 
-PressEntryParagraph.schema = {
-  name: 'PresskitEntryParagraph',
-  label: 'Presskit Entry Paragraph',
+EntryParagraph.schema = {
+  name: 'EntryParagraph',
+  label: 'Entry Paragraph',
   hideFromAddMenu: true,
   getDefaultProps: () => ({
     paragraph: 'Write your paragraph or description here.'
   }),
 }
 
-export default PressEntryParagraph
+export default EntryParagraph

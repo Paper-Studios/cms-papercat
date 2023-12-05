@@ -118,7 +118,7 @@ Presskit.schema = {
             title: 'Description'
           }
         ],
-        PresskitEntryParagraph: [
+        EntryParagraph: [
           {
             paragraph: 'Paper Perjury is a detective mystery game where you solve a series of cases as newly hired police clerk Justina Smith and find out the truth behind a string of suspicious crimes. Work with the energetic detective Ernest Hunt and dig for clues in the paper trail to discover the secrets that paperwork can hide.'
           }
@@ -130,7 +130,7 @@ Presskit.schema = {
             title: 'History'
           }
         ],
-        PresskitEntryParagraph: [
+        EntryParagraph: [
           {
             paragraph: 'Paper Perjury started because the creator James Acosta wanted to use Ace Attorney mechanics outside of the standard courtroom setting. While originally called Paper Trails, it has been renamed to Paper Perjury to emphasize the core gameplay of catching witnesses in their lies.'
           }
@@ -142,7 +142,7 @@ Presskit.schema = {
             title: 'Features'
           }
         ],
-        PresskitEntryParagraph: [
+        EntryParagraph: [
           { paragraph: '• Collect evidence from colorful characters, each animated in handcrafted pixel art' },
           { paragraph: '• Interview witnesses from all walks of life.' },
           { paragraph: '• Use evidence to outwit criminals to catch them in their lies - and shove the truth in their face!' },
