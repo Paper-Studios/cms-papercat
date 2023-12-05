@@ -2,16 +2,11 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons'
 import IFramePlayer from './features/IFramePlayer'
-import { Text, RichText, Image, types } from 'react-bricks/frontend'
+import { Text, RichText, Image, types, Repeater } from 'react-bricks/frontend'
 import styles from '../../css/Home.module.css'
 
 interface HomeProps {
   videoLink: string;
-  blurb1: string;
-  blurb2: string;
-  abstract: string;
-  steamTitle: string;
-  steamDesc: string;
   tinyTeam: boolean;
   windowsIcon: boolean;
   appleIcon: boolean;
@@ -32,15 +27,8 @@ const Home: types.Brick<HomeProps> = ({ videoLink, tinyTeam, windowsIcon, appleI
         />
         <IFramePlayer videoLink={videoLink} classname={styles.bannerVideo}/>
       </div>
-      <div className={styles.blurb}>
-        <Text
-          renderBlock={({ children }) => (
-            <span>{children}</span>
-          )}
-          propName='blurb1'
-          placeholder=''
-        />
-      </div>
+      <Repeater propName="HomeTitle" />
+      <Repeater propName="ImagePair" />
       <div className={styles.homeContent}>
         <div className={styles.homeDescription}>
           <RichText
@@ -142,6 +130,19 @@ Home.schema = {
   name: 'home',
   label: 'Home Page',
   category: 'layout',
+  repeaterItems: [
+    {
+      name: 'HomeTitle',
+      itemType: 'HomeTitle',
+      itemLabel: 'Title Blurb',
+      max: 1
+    },
+    {
+      name: 'ImagePair',
+      itemType: 'ImagePair',
+      itemLabel: 'Image Pair',
+    },
+  ],
   getDefaultProps: () => ({
     videoLink: "https://www.youtube.com/embed/mvKB5AkDQko?si=jSEgbFWovtSaBkjB",
     blurb1: "Solve Crimes, Outsmart Criminals",
