@@ -67,32 +67,18 @@
 
 .homeContent {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 3%;
-  padding: 0 1%;
-}
-
-.homeDescription {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: center;
-  flex-basis: 50%;
+  margin: 1% 0;
 }
 
 .abstract {
   margin: 0;
+  margin-bottom: 1%;
   font-family: var(--text-tertiary);
   font-size: 20px;
   background-color: #402278;
   padding: 3%;
   border-radius: 1rem 1rem;
-  margin-bottom: 2%;
-}
-
-.release {
-  margin: 4%;
-  padding: 20px;
 }
 
 .steamContainer {
@@ -201,7 +187,6 @@
 .imagePair {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4%;
 }
 
 .imagePair img {

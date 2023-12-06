@@ -1,8 +1,11 @@
 import { types } from 'react-bricks/frontend'
 import layout from './layout'
 import Home from './Home'
+import HomeEntry from './HomeEntry'
 import HomeTitle from './features/HomeTitle'
 import ImagePair from './features/ImagePair'
+import HomeParagraph from './features/HomeParagraph'
+import SteamBox from './features/SteamBox'
 import Team from './Team'
 import TeamMember from './TeamMember'
 import Presskit from './Presskit'
@@ -24,7 +27,7 @@ const bricks: types.Theme[] = [
       },
       {
         categoryName: 'Hero Section',
-        bricks: [Home, HomeTitle, ImagePair]
+        bricks: [Home, HomeEntry, HomeTitle, ImagePair, HomeParagraph, SteamBox]
       },
       {
         categoryName: 'Team Section',
