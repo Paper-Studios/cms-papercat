@@ -22,6 +22,19 @@
 .logoBg {
   background: white;
   border-radius: 50%;
+  -webkit-animation: swing 3s ease infinite;
+  animation: swing 3s ease infinite;
+}
+
+@-webkit-keyframes swing {
+  0% {-webkit-transform: rotate(10deg);}
+  50% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(10deg); }
+}
+@keyframes swing {
+  0% {transform: rotate(10deg);}
+  50% {transform: rotate(-5deg);}
+  100% {transform: rotate(10deg); }
 }
 
 .pcLogo {
