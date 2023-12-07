@@ -20,14 +20,30 @@
   filter: brightness(80%);
   width: 100%;
   height: 100%;
+  animation: fadeIn;
+  animation-duration: 1.5s;
 }
 
 .bannerVideo {
   position: absolute;
   width: 70%;
   height: 90%;
-  animation: fadeIn;
-  animation-duration: 2s;
+  -webkit-animation: mover 2s;
+  animation: mover 2s;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(15px); opacity: 0%; }
+  100% { transform: translateY(0); opacity: 100%; }
+}
+@keyframes mover {
+  0% { transform: translateY(15px); opacity: 0%; }
+  100% { transform: translateY(0); opacity: 100%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0%; }
+  100% { opacity: 100% }
 }
 
 .blurb {
@@ -166,6 +182,18 @@
   color: #D2EFA9;
   background: linear-gradient(#87BC3C, #45740B);
   border: 3px solid black;
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+}
+@-webkit-keyframes pulse {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .steamButtonRight:hover {
