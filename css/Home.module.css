@@ -20,12 +20,30 @@
   filter: brightness(80%);
   width: 100%;
   height: 100%;
+  animation: fadeIn;
+  animation-duration: 1.5s;
 }
 
 .bannerVideo {
   position: absolute;
   width: 70%;
   height: 90%;
+  -webkit-animation: mover 2s;
+  animation: mover 2s;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(15px); opacity: 0%; }
+  100% { transform: translateY(0); opacity: 100%; }
+}
+@keyframes mover {
+  0% { transform: translateY(15px); opacity: 0%; }
+  100% { transform: translateY(0); opacity: 100%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0%; }
+  100% { opacity: 100% }
 }
 
 .blurb {
@@ -65,32 +83,18 @@
 
 .homeContent {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 3%;
-  padding: 0 1%;
-}
-
-.homeDescription {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: center;
-  flex-basis: 50%;
+  margin: 1% 0;
 }
 
 .abstract {
   margin: 0;
+  margin: 0 2% 2%;
   font-family: var(--text-tertiary);
   font-size: 20px;
   background-color: #402278;
   padding: 3%;
   border-radius: 1rem 1rem;
-  margin-bottom: 2%;
-}
-
-.release {
-  margin: 4%;
-  padding: 20px;
 }
 
 .steamContainer {
@@ -99,7 +103,7 @@
   padding: 3%;
   background-color: #282F38;
   position: relative;
-  margin-top: 2%;
+  margin: 2% 2% 4% 2%;
 }
 
 .steamTitle {
@@ -109,7 +113,7 @@
 }
 
 .steamTitle h4 {
-  font-size: 20px;
+  font-size: 28px;
   font-family: var(--text-tertiary);
   margin: 0;
   padding: 0;
@@ -120,8 +124,8 @@
 }
 
 .steamTitle img {
-  width: 5%;
-  height: 5%;
+  width: 4%;
+  height: 4%;
   filter: brightness(75%);
 }
 
@@ -137,22 +141,24 @@
 
 .steamInfo p {
   font-family: var(--text-tertiary);
-  font-size: 14px;
+  font-size: 22px;
   margin: 0 0 0 3%;
 }
 
 .steamPlatformIcons {
   display: flex;
   align-items: center;
+  margin-top: 1%;
 }
 
 .platformIcons {
   margin-left: 2%;
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .steamButtons {
   font-family: var(--text-tertiary);
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -166,19 +172,33 @@
 
 .steamButtonLeft {
   background-color: black;
-  margin-right: 5px;
-  padding: 1.5%;
+  color: white;
+  padding: 1%;
+  border: 3px solid black;
 }
 
 .steamButtonRight {
-  padding: 1.5%;
-  color: white;
+  padding: 1%;
+  color: #D2EFA9;
   background: linear-gradient(#87BC3C, #45740B);
+  border: 3px solid black;
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+}
+@-webkit-keyframes pulse {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .steamButtonRight:hover {
   color: white;
-  filter: brightness(75%);
+  filter: brightness(125%);
   cursor: pointer;
 }
 
@@ -196,6 +216,16 @@
   margin-top: 5%;
 }
 
+.imagePair {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagePair img {
+  width: 49%;
+  height: 49%;
+}
+
 @media screen and (max-width: 1536px) {
   .homeScreenshots {
     justify-content: space-around;
@@ -203,20 +233,8 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .homeContent {
-    flex-direction: column;
-  }
-  .homeDescription {
-    margin-bottom: 8%;
-  }
   .blurb {
     font-size: larger;
-  }
-  .abstract {
-    margin: 0;
-  }
-  .steamContainer {
-    margin: 0;
   }
   .steamTitle h4 {
     font-size: 24px;
@@ -224,12 +242,11 @@
   .steamInfo p {
     font-size: 20px;
   }
-  .homeScreenshots {
-    flex-direction: row;
-    justify-content: space-between;
+  .steamButtons {
+    font-size: 16px;
   }
-  .homeScreenshots img {
-    width: 48%;
+  .platformIcons {
+    font-size: 22px;
   }
 }
 
@@ -253,32 +270,34 @@
 
 @media screen and (max-width: 670px) {
   .Home {
-    margin-top: 3%;
+    margin-top: 4%;
+  }
+  .steamTitle h4 {
+    font-size: 20px;
+  }
+  .steamInfo p {
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .homeContent {
-    display: flex;
-    flex-direction: column;
-  }
-  .homeDescription {
-    width: 100%;
-  }
+@media screen and (max-width: 480px) {
   .abstract {
     font-size: 16px;
+    padding: 6%;
   }
   .blurb {
-    width: 80%;
+    max-width: 80%;
     margin: 8%;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
   }
-  .release {
-    font-size: larger;
-  }
   .steamContainer {
-    margin-bottom: 15px;
+    padding: 6%;
+    margin: 6% 2%;
+  }
+  .steamTitle img {
+    width: 8%;
+    height: 8%;
   }
   .steamInfo {
     flex-direction: column;
@@ -292,18 +311,18 @@
     margin: 0 0 15px 0;
   }
   .steamPlatformIcons {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .steamPlatformIcons img{
     width: 10%;
   }
-  .homeScreenshots {
+  .imagePair {
     flex-direction: column;
-    align-items: center;
   }
-  .homeScreenshots img {
+  .imagePair img {
     width: 100%;
-    margin-bottom: 15px;
+    height: 100%;
+    margin-top: 6%;
   }
 }
 
