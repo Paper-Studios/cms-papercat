@@ -5,6 +5,7 @@ import { faPaperPlane, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { Text, Link, File, types, useAdminContext } from 'react-bricks/frontend'
 
 import styles from '../../../css/Button.module.css'
+import footerOverride from '../../../css/FooterBtnOverride.module.css'
 
 export interface ButtonProps {
   icon?: string
@@ -64,7 +65,8 @@ const Button: types.Brick<ButtonProps> = ({
           styles.button,
           size === 'small' ? styles.buttonPsmall : styles.buttonPnormal,
           styles.hyperlinkButton,
-          className
+          className,
+          { [footerOverride.footerBtn]: className === 'footerBtn' }, // apply override only if class = 'footerBtn'
         )}
         type='button'
       >
@@ -95,7 +97,8 @@ const Button: types.Brick<ButtonProps> = ({
                 styles.button,
                 size === 'small' ? styles.buttonPsmall : styles.buttonPnormal,
                 styles.hyperlinkButton,
-                className
+                className,
+                { [footerOverride.footerBtn]: className === 'footerBtn' }, // apply override only if class = 'footerBtn'
               )}
             >
               {iconSymbol && iconSymbol}
@@ -124,7 +127,8 @@ const Button: types.Brick<ButtonProps> = ({
       className={classNames(
         styles.button,
         size === 'small' ? styles.buttonPsmall : styles.buttonPnormal,
-        className
+        className,
+        { [footerOverride.footerBtn]: className === 'footerBtn' } // apply override only if class = 'footerBtn'
       )}
       form={form ? 'contact-form' : undefined}
     >
@@ -226,6 +230,19 @@ Button.schema = {
             ],
           },
         },
+        {
+          name: 'className',
+          label: 'Button Class Name',
+          type: types.SideEditPropType.Select,
+          selectOptions: {
+            display: types.OptionsDisplay.Select,
+            options: [
+              { value: '', label: 'Not for a specific section' },
+              { value: 'footerBtn', label: 'Footer Section' },
+              { value: 'gamesBtn', label: 'Games Section' },
+            ]
+          }
+        }
       ],
     },
   ],

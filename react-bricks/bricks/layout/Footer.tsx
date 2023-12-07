@@ -87,6 +87,7 @@ Footer.schema = {
             text: 'Press Kit',
             icon: 'download',
             size: 'normal',
+            className: 'footerBtn'
           }
         ]
       }
