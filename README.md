@@ -7,10 +7,12 @@ While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS
 [-----]
 
 ## Team Members
-- [Rachel Miller](https://github.com/rkmiller131)
-- [Jin Myeong "Fox" Seo](https://github.com/yoko-8)
-- [Naru Sadakuni](https://github.com/nsadakuni)
-- [Ethan Pinsker](https://github.com/EthanPin)
+- Next.js CMS Creator:
+    - [Rachel Miller](https://github.com/rkmiller131)
+- React App Contributors:
+    - [Jin Myeong "Fox" Seo](https://github.com/yoko-8)
+    - [Naru Sadakuni](https://github.com/nsadakuni)
+    - [Ethan Pinsker](https://github.com/EthanPin)
 
 ## 📁 Tech Stack
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -19,27 +21,12 @@ While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS
 ![ReactBricks](https://github.com/rkmiller131/cms-papercat/assets/21061780/efeef154-c107-4ec6-a8bb-b65061002d1c)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-## 🏠 Home Page and Admin Interface
+## 🚧 Building through the Admin Interface
 
-![Screenshot 2023-10-20 at 1 45 24 PM](https://github.com/rkmiller131/cms-papercat/assets/21061780/62f3385a-5c77-46fc-b6a1-765c72359cec)
+https://github.com/rkmiller131/cms-papercat/assets/21061780/aea7f379-30fa-409e-9488-661253b1156b
 
 ![Admin](https://github.com/rkmiller131/cms-papercat/assets/21061780/3e53ac3b-459e-4e3b-a020-8a8a06302e1a)
 
-
-## 🚀 Quick start (Make your own React Bricks Project!)
-
-We suggest that you use the CLI and choose this starter.  
-In this way you will have the credentials already set up in a `.env.local` file:
-
-```bash
-npx create-reactbricks-app
-```
-
-Otherwise you can directly clone this repo:
-
-```bash
-git clone https://github.com/reactbricks/nextjs-starter-reactbricks your-project
-```
 
 ## 📖 Documentation
 
