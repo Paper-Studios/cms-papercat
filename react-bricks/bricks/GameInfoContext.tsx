@@ -12,7 +12,7 @@ export type GameInfoContextType = {
 };
 
 export type GameClickedType = {
-  title: string;
+  name: string;
   summary: string;
   embeddedurl: string;
   steamLink: string;

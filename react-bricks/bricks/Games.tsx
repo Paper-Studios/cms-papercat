@@ -7,7 +7,7 @@ import GameInfo from '../components/GameInfo'
 import styles from '../../css/Games.module.css'
 
 const Games: types.Brick<{}> = (props) => {
-  const { gameInfo } = UseGameInfoContext();
+  console.log('props in Games Page are ', props);
   const {changeGame, gameDisplayed } = UseGameClickedContext();
   const { isAdmin, previewMode } = useAdminContext()
 
@@ -23,7 +23,13 @@ const Games: types.Brick<{}> = (props) => {
   return (
     <div className={styles.gamesPage}>
       <div className={styles.gamesDisplayLeft}>
-        <h2>We make games!</h2>
+        <Text
+          propName='gameInfoTitle'
+          placeholder=''
+          renderBlock={({ children }) => (
+            <h2>{children}</h2>
+          )}
+        />
         {gameDisplayed && Object.keys(gameDisplayed).length > 0 &&
           <GameInfo />
         }
@@ -45,6 +51,7 @@ Games.schema = {
     itemLabel: 'Game Card',
   }],
   getDefaultProps: () => ({
+    gameInfoTitle: 'We make games!',
     GameCard: [
       {
         name: 'Paper Perjury',

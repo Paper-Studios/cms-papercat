@@ -4,7 +4,14 @@ import { UseGameClickedContext } from './GameInfoContext'
 
 import styles from '../../css/Games.module.css'
 
-const GameCard: types.Brick<{name: string}> = ({ name }) => {
+interface GameCardProps {
+  name: string;
+  summary: string;
+  embeddedurl: string;
+  steamLink: string;
+}
+
+const GameCard: types.Brick<GameCardProps> = ({ name }) => {
   const { changeGame } = UseGameClickedContext();
   const { isAdmin, previewMode } = useAdminContext();
 
@@ -41,13 +48,16 @@ GameCard.schema = {
   name: 'GameCard',
   label: 'Game Card',
   hideFromAddMenu: true,
+  getDefaultProps: () => ({
+    name: 'Game Title Here',
+  }),
   sideEditProps: [
     {
       groupName: 'Game Card Info',
       defaultOpen: true,
       props: [
         {
-          name: 'title',
+          name: 'name',
           label: 'Game Title',
           type: types.SideEditPropType.Text,
         },

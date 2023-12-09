@@ -39,7 +39,7 @@ const ReactBricksApp = ({ Component, pageProps }: AppProps) => {
         } = gameCard.props;
 
         games.gameInfo[name] = {
-          title: name,
+          name,
           summary,
           embeddedurl,
           steamLink,
