@@ -1,28 +1,21 @@
 import React from 'react'
 import { types } from 'react-bricks/frontend'
-// import { UseGameDisplayContext, UseGameClickedContext } from './GameInfoContext'
+import { UseGameClickedContext } from './GameInfoContext'
 
 import styles from '../../css/Games.module.css'
 
-
-const GameCard: types.Brick<{ index: number }> = ({ index }) => {
-  // const { gameInfo } = UseGameDisplayContext();
-  // const changeGame = UseGameClickedContext();
-
-  // after mapping and explicitly exposing the index on the repeater, use as identifier:
-  const gameCardId = `gameCard_${index}`;
+const GameCard: types.Brick<{name: string}> = ({ name }) => {
+  const { changeGame } = UseGameClickedContext();
 
   return (
-    // <div className={styles.gamesContent} onClick={() => { changeGame({ name: gameCardId} ) }}>
-    <div className={styles.gamesContent}>
+    <div className={styles.gamesContent} onClick={(e) => { changeGame(name) }}>
       <div className={styles.gameCard}>
         <span className={styles.gamePreview}>
           <span className={styles.gameImg} />
           <span className={styles.cardFade} />
           <span className={styles.cardBorder} />
         </span>
-        {/* <span className={styles.gameTitle}>{gameInfo[gameCardId]?.title}</span> */}
-        <span className={styles.gameTitle}>Paper Perjury</span>
+        <span className={styles.gameTitle}>{name}</span>
       </div>
     </div>
   )

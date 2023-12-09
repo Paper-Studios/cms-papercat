@@ -1,45 +1,36 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import type { AppProps } from 'next/app'
-import { UseGameDisplayContext, UseGameClickedContext } from './GameInfoContext'
-import { Text, RichText, Image, types, Repeater } from 'react-bricks/frontend'
+import { UseGameInfoContext, UseGameClickedContext } from './GameInfoContext'
+import { Text, RichText, Image, types, Repeater, useReactBricksContext, usePageValues } from 'react-bricks/frontend'
+import { PageViewer, usePage, cleanPage, ReactBricksContext } from 'react-bricks'
 import Button from './layout/Button'
 
 import styles from '../../css/Games.module.css'
 
-const Games: types.Brick<{}> = ({ pageProps }: AppProps) => {
-  // const { gameInfo, setGameInfo } = UseGameDisplayContext();
-  // const changeGame = UseGameClickedContext();
-  const [gameDisplayed, setGameDisplayed] = useState({
-    title: '',
-    summary: '',
-    embeddedurl: '',
-    steamLink: '',
-  });
+const Games: types.Brick<{}> = (props) => {
+  const { gameInfo } = UseGameInfoContext();
+  const {changeGame, gameDisplayed } = UseGameClickedContext();
 
   // useEffect(() => {
-  //   const pagesRendered = pageProps;
-  //   console.log('pages Rendered are ', pagesRendered);
-  //   // setGameInfo based on the props extracted from pagesRendered when I figure out what those are from admin interface
-  // }, [pageProps, setGameInfo]);
+  //   console.log('game displayed is ', gameDisplayed);
+  // }, [gameDisplayed]);
+  console.log('gameDisplayed', gameDisplayed)
 
   function resetGameDisplayed (e) {
-    if (!e.target.closest('.gameCard')) {
-      // changeGame(null);
-      setGameDisplayed({
-        title: '',
-        summary: '',
-        embeddedurl: '',
-        steamLink: '',
-      });
-    }
+    // console.log('e', e.taget.closest('.gameCard'))
+    console.log('e is ', e.target !== "Games_gameImg__pux6T");
+    // if (!e.target.closest('.gameCard')) {
+    //   console.log('firing')
+    //   changeGame('');
+    // }
   }
 
   return (
     <div className={styles.gamesPage}>
       <div className={styles.gamesDisplayLeft}>
         <h3 style={{margin: '5% 0'}}>We make games!</h3>
-        {gameDisplayed.title &&
+        {/* {gameDisplayed.title &&
           <div className={styles.gameInfoDisplay}>
             <div style={{marginBottom: '6%'}}>{gameDisplayed.title}</div>
             <p style={{marginBottom: '6%', fontFamily: '"Source Sans 3", sans-serif'}}>{gameDisplayed.summary}</p>
@@ -54,11 +45,11 @@ const Games: types.Brick<{}> = ({ pageProps }: AppProps) => {
               <Button icon={'steam'} text={'Buy on Steam'} href={gameDisplayed.steamLink} type={'button'} buttonType={'link'} size={'small'} form={false}/>
             </div>
           </div>
-        }
+        } */}
       </div>
-      <div className={styles.gamesSelectRight} onClick={resetGameDisplayed}>
+      <div className={styles.gamesSelectRight} onClick={(e) => resetGameDisplayed(e)}>
         <h2 style={{marginBottom: '5%'}}>Current releases:</h2>
-        <Repeater propName="GameCard" />
+        <Repeater propName="GameCard"/>
       </div>
     </div>
   )
@@ -79,6 +70,12 @@ Games.schema = {
         summary: 'TEST SUMMARY',
         embeddedurl: 'www.youtube.com',
         steamLink: 'www.webdevrachel.com',
+      },
+      {
+        name: 'Second Game',
+        summary: 'Another Test summary for the second game to display for data sake',
+        embeddedurl: 'pretend I am a youtube url',
+        steamLink: 'pretend I am a steamlink url',
       }
     ]
   })

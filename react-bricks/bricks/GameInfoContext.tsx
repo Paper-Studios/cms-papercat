@@ -1,18 +1,14 @@
 import React, { createContext, useContext, useState } from 'react'
 
-export type GameInfoContext = {
+export type GameInfoData = {
   gameInfo: {
     [key: string]: GameClickedType
   }
 };
 
 export type GameInfoContextType = {
-  gameInfo: GameInfoContext;
-  setGameInfo: React.Dispatch<React.SetStateAction<GameInfoContext>>;
-};
-
-export type GameTitle = {
-  name: string;
+  gameInfo: GameInfoData;
+  setGameInfo: React.Dispatch<React.SetStateAction<GameInfoData>>;
 };
 
 export type GameClickedType = {
@@ -22,35 +18,47 @@ export type GameClickedType = {
   steamLink: string;
 }
 
-export const GameDisplayContext = createContext<GameInfoContextType | undefined>(undefined);
-export const GameClickedContext = createContext<(gameTitle: GameTitle) => GameClickedType | null>(() => null);
+export const GameInfoContext = createContext<GameInfoContextType | undefined>(undefined);
 
-export const UseGameDisplayContext = () => {
-  const context = useContext(GameDisplayContext);
+export type GameClickedContextType = {
+  changeGame: (gameTitle: string) => void;
+  gameDisplayed: GameClickedType;
+}
+
+export const GameClickedContext = createContext<GameClickedContextType | null>(null);
+
+export const UseGameInfoContext = () => {
+  const context = useContext(GameInfoContext);
   if (!context) {
-    throw new Error('useGameDisplayContext must be used within GameDisplayContextProvider');
+    throw new Error('useGameInfoContext must be used within GameInfoContextProvider');
   }
   return context;
 }
 
 export const UseGameClickedContext = () => {
-  return useContext(GameClickedContext);
+  const context = useContext(GameClickedContext);
+  if (!context) {
+    throw new Error('useGameClickedContext must be used within GameClickedContextProvider')
+  }
+  return context;
 }
 
-export const GameDisplayContextProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [gameInfo, setGameInfo] = useState<GameInfoContext>({} as GameInfoContext);
+export const GameInfoContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [gameInfo, setGameInfo] = useState<GameInfoData>({} as GameInfoData);
+  const [gameDisplayed, setGameDisplayed] = useState<GameClickedType>({} as GameClickedType);
 
-  function changeGame(gameTitle: GameTitle): GameClickedType {
-    const gameSelected = gameInfo[gameTitle.name];
-    return gameSelected || null;
+  function changeGame(gameTitle: string): void {
+    const gameSelected = gameInfo.gameInfo[gameTitle];
+    setGameDisplayed(gameSelected);
   }
 
+
   return (
-    <GameDisplayContext.Provider value={{ gameInfo, setGameInfo }}>
-      <GameClickedContext.Provider value={changeGame}>
+    <GameInfoContext.Provider value={{ gameInfo, setGameInfo }}>
+      <GameClickedContext.Provider value={{changeGame, gameDisplayed}}>
         {children}
       </GameClickedContext.Provider>
-    </GameDisplayContext.Provider>
+    </GameInfoContext.Provider>
   );
 };
 
