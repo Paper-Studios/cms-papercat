@@ -1,5 +1,5 @@
 import React from 'react'
-import { UseGameClickedContext } from '../bricks/GameInfoContext'
+import { UseGameClickedContext } from '../context/GameInfoContext'
 import Button from '../bricks/layout/Button'
 import IFramePlayer from '../bricks/features/IFramePlayer'
 

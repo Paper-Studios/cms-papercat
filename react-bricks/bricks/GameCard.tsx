@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { types, Image, useAdminContext } from 'react-bricks/frontend'
-import { UseGameClickedContext } from './GameInfoContext'
+import { UseGameClickedContext } from '../context/GameInfoContext'
 
 import styles from '../../css/Games.module.css'
 
@@ -11,12 +11,29 @@ interface GameCardProps {
   steamLink: string;
 }
 
-const GameCard: types.Brick<GameCardProps> = ({ name }) => {
+const GameCard: types.Brick<GameCardProps> = ({ name, steamLink }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const { changeGame } = UseGameClickedContext();
   const { isAdmin, previewMode } = useAdminContext();
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className={styles.gamesContent} onClick={() => { changeGame(name) }}>
+    <div
+      className={styles.gamesContent}
+      onClick={() => {
+        isMobile ? window.open(`${steamLink}`, '_blank') : changeGame(name)
+      }}
+    >
       <div className={styles.gameCard}>
         <span className={styles.gamePreview}>
           {/* <span className={styles.gameImg} /> */}

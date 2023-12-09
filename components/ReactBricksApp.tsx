@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ReactBricks } from 'react-bricks/frontend'
-import { GameInfoData, UseGameInfoContext } from '../react-bricks/bricks/GameInfoContext'
+import { GameInfoData, UseGameInfoContext } from '../react-bricks/context/GameInfoContext'
 import type { AppProps } from 'next/app'
 import config from '../react-bricks/config'
 import Layout from '../components/layout'

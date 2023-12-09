@@ -1,15 +1,25 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { UseGameInfoContext, UseGameClickedContext } from './GameInfoContext'
-import { Text, RichText, Image, types, Repeater, useAdminContext } from 'react-bricks/frontend'
-import Button from './layout/Button'
+import React, { useState, useEffect } from 'react'
+import { UseGameClickedContext } from '../context/GameInfoContext'
+import { Text, types, Repeater, useAdminContext } from 'react-bricks/frontend'
 import GameInfo from '../components/GameInfo'
 
 import styles from '../../css/Games.module.css'
 
-const Games: types.Brick<{}> = (props) => {
-  console.log('props in Games Page are ', props);
+const Games: types.Brick = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const {changeGame, gameDisplayed } = UseGameClickedContext();
-  const { isAdmin, previewMode } = useAdminContext()
+  const { isAdmin, previewMode } = useAdminContext();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   function resetGameDisplayed (e) {
     if (!e.target.classList.contains('Games_gameImg__pux6T')) {
@@ -17,8 +27,6 @@ const Games: types.Brick<{}> = (props) => {
       changeGame('');
     }
   }
-
-  console.log('game displayed is ', gameDisplayed);
 
   return (
     <div className={styles.gamesPage}>
@@ -30,7 +38,7 @@ const Games: types.Brick<{}> = (props) => {
             <h2>{children}</h2>
           )}
         />
-        {gameDisplayed && Object.keys(gameDisplayed).length > 0 &&
+        {!isMobile && gameDisplayed && Object.keys(gameDisplayed).length > 0 &&
           <GameInfo />
         }
       </div>
