@@ -25,7 +25,7 @@ IFramePlayer.schema = {
   }),
   sideEditProps: [
     {
-      groupName: 'Hero Banner',
+      groupName: 'Video Player',
       defaultOpen: true,
       props: [
         {

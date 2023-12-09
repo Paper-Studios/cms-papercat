@@ -16,6 +16,8 @@ import PressEntryImage from './PressEntryImage'
 import BigImage from './features/BigImage'
 import Title from './features/Title'
 import Paragraph from './features/Paragraph'
+import Games from './Games'
+import GameCard from './GameCard'
 
 const bricks: types.Theme[] = [
   {
@@ -32,6 +34,10 @@ const bricks: types.Theme[] = [
       {
         categoryName: 'Team Section',
         bricks: [Team, TeamMember]
+      },
+      {
+        categoryName: 'Games Section',
+        bricks: [Games, GameCard]
       },
       {
         categoryName: 'Presskit Section',
