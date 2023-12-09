@@ -13,11 +13,30 @@
   background-color: #402278;
 }
 
+.gamesDisplayLeft h2 {
+  margin: 6% 0;
+  font-family: 'Bubblegum Sans', cursive;
+  text-shadow: rgba(0, 0, 0, 0.5) -5px 5px 5px;
+  animation: wow 0.75s linear 0.6s;
+}
+
+@keyframes wow {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.05) }
+  100% { transform: scale(1) }
+}
+
 .gameInfoDisplay {
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 0% 10%;
+  margin: 2% 0;
+}
+
+.gameInfoDisplayTitle {
+  margin-bottom: 3%;
+  font-size: 22px;
 }
 
 .gameDisplayVideo {
@@ -72,7 +91,6 @@
   bottom: 0;
   right: 0;
   background-size: cover;
-  background-image: url('/public/assets/main.jpg');
   background-position: center center;
   float: left;
   transition: left 0.25s, right 0.25s, bottom 0.25s, top 0.25s;
@@ -85,6 +103,11 @@
   right: -10px;
   top: -10px;
   bottom: -10px;
+}
+
+.gameImg img {
+  position: absolute;
+  z-index: -1;
 }
 
 .cardFade {

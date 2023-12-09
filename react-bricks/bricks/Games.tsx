@@ -23,13 +23,13 @@ const Games: types.Brick<{}> = (props) => {
   return (
     <div className={styles.gamesPage}>
       <div className={styles.gamesDisplayLeft}>
-        <h3 style={{margin: '5% 0'}}>We make games!</h3>
+        <h2>We make games!</h2>
         {gameDisplayed && Object.keys(gameDisplayed).length > 0 &&
           <GameInfo />
         }
       </div>
       <div className={styles.gamesSelectRight} onClick={(e) => resetGameDisplayed(e)}>
-        <h2 style={{marginBottom: '5%'}}>Current releases:</h2>
+        <h3 style={{marginBottom: '5%'}}>Current releases:</h3>
         <Repeater propName="GameCard"/>
       </div>
     </div>

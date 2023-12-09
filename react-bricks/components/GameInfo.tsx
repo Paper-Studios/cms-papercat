@@ -10,11 +10,20 @@ const GameInfo: React.FC = () => {
 
   return (
     <div className={styles.gameInfoDisplay}>
-      <div style={{marginBottom: '6%'}}>{gameDisplayed.title}</div>
+      <div className={styles.gameInfoDisplayTitle}>{gameDisplayed.title}</div>
       <p style={{marginBottom: '6%', fontFamily: '"Source Sans 3", sans-serif'}}>{gameDisplayed.summary}</p>
       <IFramePlayer videoLink={gameDisplayed.embeddedurl} classname={styles.gameDisplayVideo} />
       <div className={styles.gamesButtonContainer}>
-        <Button icon={'steam'} text={'Buy on Steam'} href={gameDisplayed.steamLink} type={'button'} buttonType={'link'} size={'small'} form={false}/>
+        <Button
+          icon={'steam'}
+          text={'Buy on Steam'}
+          href={gameDisplayed.steamLink}
+          type={'button'}
+          buttonType={'link'}
+          size={'small'}
+          form={false}
+          isTargetBlank={true}
+        />
       </div>
     </div>
   );
