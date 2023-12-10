@@ -1,5 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import {
   PageViewer,
   cleanPage,
@@ -7,15 +7,14 @@ import {
   fetchPages,
   types,
   useReactBricksContext,
-} from 'react-bricks/frontend'
+} from 'react-bricks/frontend';
 
-import ErrorNoFooter from '../../../components/errorNoFooter'
-import ErrorNoKeys from '../../../components/errorNoKeys'
-import config from '../../../react-bricks/config'
+import ErrorNoFooter from '../../../components/errorNoFooter';
+import ErrorNoKeys from '../../../components/errorNoKeys';
+import config from '../../../react-bricks/config';
 
 interface PageProps {
   page: types.Page
-  header: types.Page
   footer: types.Page
   errorPage: string
   errorNoKeys: string
@@ -24,15 +23,14 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({
   page,
-  header,
   footer,
   errorNoKeys,
   errorPage,
   errorFooter,
 }) => {
-  const { pageTypes, bricks } = useReactBricksContext()
-  const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
-  const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
+  const { pageTypes, bricks } = useReactBricksContext();
+  const pageOk = page ? cleanPage(page, pageTypes, bricks) : null;
+  const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null;
 
   return (
     <>
@@ -52,29 +50,29 @@ const Page: React.FC<PageProps> = ({
       )}
       {errorNoKeys && <ErrorNoKeys />}
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  let errorNoKeys: boolean = false
-  let errorPage: boolean = false
-  let errorFooter: boolean = false
+  let errorNoKeys: boolean = false;
+  let errorPage: boolean = false;
+  let errorFooter: boolean = false;
 
   if (!config.apiKey) {
-    errorNoKeys = true
+    errorNoKeys = true;
     return { props: { errorNoKeys } }
   }
 
-  const { slug } = context.params
+  const { slug } = context.params;
 
-  let cleanSlug = ''
+  let cleanSlug = '';
 
   if (!slug) {
-    cleanSlug = '/'
+    cleanSlug = '/';
   } else if (typeof slug === 'string') {
-    cleanSlug = slug
+    cleanSlug = slug;
   } else {
-    cleanSlug = slug.join('/')
+    cleanSlug = slug.join('/');
   }
 
   const [page, header, footer] = await Promise.all([
@@ -84,17 +82,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
       context.locale,
       config.pageTypes
     ).catch(() => {
-      errorPage = true
+      errorPage = true;
       return {}
     }),
     fetchPage('header', config.apiKey, context.locale).catch(() => {
       return {}
     }),
     fetchPage('footer', config.apiKey, context.locale).catch(() => {
-      errorFooter = true
+      errorFooter = true;
       return {}
     }),
-  ])
+  ]);
 
   return {
     props: {
@@ -117,7 +115,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     type: 'blog',
     pageSize: 100,
     sort: '-publishedAt',
-  })
+  });
 
   const paths = allPages
     .map((page) =>
@@ -137,4 +135,4 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   return { paths, fallback: false }
 }
 
-export default Page
+export default Page;

@@ -1,5 +1,5 @@
-import { GetStaticProps } from 'next'
-import Head from 'next/head'
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import {
   PageViewer,
   cleanPage,
@@ -7,13 +7,13 @@ import {
   fetchPages,
   types,
   useReactBricksContext,
-} from 'react-bricks/frontend'
+} from 'react-bricks/frontend';
 
-import PostListItem from '../../components/PostListItem'
-import ErrorNoFooter from '../../components/errorNoFooter'
-import ErrorNoKeys from '../../components/errorNoKeys'
-import config from '../../react-bricks/config'
-import styles from '../../css/Blog.module.css'
+import PostListItem from '../../components/PostListItem';
+import ErrorNoFooter from '../../components/errorNoFooter';
+import ErrorNoKeys from '../../components/errorNoKeys';
+import config from '../../react-bricks/config';
+import styles from '../../css/Blog.module.css';
 
 interface HomeProps {
   errorNoKeys: string
@@ -29,7 +29,7 @@ const BlogList: React.FC<HomeProps> = ({
   errorFooter,
   footer,
 }) => {
-  const { pageTypes, bricks } = useReactBricksContext()
+  const { pageTypes, bricks } = useReactBricksContext();
   const footerOk = footer ? cleanPage(footer, pageTypes, bricks) : null
 
   return (
@@ -66,15 +66,15 @@ const BlogList: React.FC<HomeProps> = ({
       )}
       {errorNoKeys && <ErrorNoKeys />}
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  let header: {} | types.Page
-  let footer: {} | types.Page
-  let errorNoKeys: boolean = false
-  let errorHeader: boolean = false
-  let errorFooter: boolean = false
+  let header: {} | types.Page;
+  let footer: {} | types.Page;
+  let errorNoKeys: boolean = false;
+  let errorHeader: boolean = false;
+  let errorFooter: boolean = false;
 
   if (!config.apiKey) {
     errorNoKeys = true
@@ -85,18 +85,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
       type: 'blog',
       pageSize: 1000,
       sort: '-publishedAt',
-    })
+    });
 
     header = await fetchPage('header', config.apiKey, context.locale).catch(() => {
         return {}
       }
-    )
+    );
 
     footer = await fetchPage('footer', config.apiKey, context.locale).catch(() => {
         errorFooter = true
         return {}
       }
-    )
+    );
 
     return { props: { posts, header, footer, errorFooter } }
   } catch {
@@ -104,4 +104,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
-export default BlogList
+export default BlogList;
