@@ -1,8 +1,7 @@
-/* Styles for the individual team member brick, which is a repeater brick within the team page */
 .member {
   display: flex;
   align-items: center;
-  background: #402278;
+  background: var(--color-textarea);
   border-radius: 2rem;
   margin-top: 50px;
   padding: 2%;
@@ -32,7 +31,7 @@
 .memberImagePrimaryCard {
   width: 100%;
   height: 150px;
-  background: linear-gradient(#884CF5, #4E229C);
+  background: var(--color-gradient);
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
   position: absolute;
   z-index: 1;

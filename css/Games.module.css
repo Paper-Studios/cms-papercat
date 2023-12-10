@@ -1,6 +1,6 @@
 .gamesPage {
   display: flex;
-  background: linear-gradient(to top, #884CF5, #4E229C);
+  background: var(--color-gradient-reverse);
   width: 100%;
   min-height: 700px;
 }
@@ -10,16 +10,21 @@
   flex-direction: column;
   align-items: center;
   flex-basis: 40%;
-  background-color: #402278;
+  background-color: var(--color-textarea);
 }
 
 .gamesDisplayLeft h2 {
   margin: 6% 0;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: var(--text-primary);
   text-shadow: rgba(0, 0, 0, 0.5) -5px 5px 5px;
+  -webkit-animation: wow 0.75s linear 0.75s;
   animation: wow 0.75s linear 0.75s;
 }
-
+@-webkit-keyframes wow {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.05) }
+  100% { transform: scale(1) }
+}
 @keyframes wow {
   0% { transform: scale(1) }
   50% { transform: scale(1.05) }
@@ -187,11 +192,15 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .gamesDisplayLeft {
+    padding: 6%;
+  }
   .gameCard {
     height: 200px;
   }
   .gamesSelectRight > h3 {
     margin-bottom: 12% !important;
+    font-size: 0.875rem !important;
   }
 }
 @media screen and (max-width: 500px) {

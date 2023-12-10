@@ -1,4 +1,4 @@
-import styles from '../css/errorNoKeys.module.css'
+import styles from '../css/errorNoKeys.module.css';
 
 const ErrorNoKeys = () => {
   return (
@@ -18,7 +18,7 @@ const ErrorNoKeys = () => {
 API_KEY=...`}
       </pre>
     </div>
-  )
+  );
 }
 
-export default ErrorNoKeys
+export default ErrorNoKeys;

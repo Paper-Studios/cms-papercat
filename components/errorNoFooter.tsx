@@ -1,4 +1,4 @@
-import styles from '../css/errorNoFooter.module.css'
+import styles from '../css/errorNoFooter.module.css';
 
 const ErrorNoFooter = () => {
   return (
@@ -8,7 +8,7 @@ const ErrorNoFooter = () => {
         React Bricks cannot find an entity for the footer.
       </p>
     </div>
-  )
+  );
 }
 
-export default ErrorNoFooter
+export default ErrorNoFooter;
