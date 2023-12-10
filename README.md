@@ -25,17 +25,24 @@ While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS
 
 https://github.com/rkmiller131/cms-papercat/assets/21061780/aea7f379-30fa-409e-9488-661253b1156b
 
-![Admin](https://github.com/rkmiller131/cms-papercat/assets/21061780/3e53ac3b-459e-4e3b-a020-8a8a06302e1a)
-
 
 ## 📖 Documentation
 ### Entities:
 **Navbar**<br>
-Located in Entities under 'Layout' -> 'Header', the social links for Discord, Twitter, and Steam can be edited.
+- Located in Entities under 'Layout' -> 'Header', the social links for Discord, Twitter, and Steam can be edited.
+
+![Navbar](https://github.com/rkmiller131/cms-papercat/assets/21061780/8c227233-cf09-4b0d-ae33-267fa93c9c44)
 
 **Footer**<br>
-Located in Entities under 'Layout' -> 'Footer', the default footer has standard, editable text blocks.
+- Located in Entities under 'Layout' -> 'Footer', the default footer has standard, editable text blocks.
 
-However, if you would like to change the columns completely, this is also possible by clicking on the column, and 'Remove' on the righthand panel. There can be up to 4 columns, and each column can have up to 3 fields: text, links, or buttons.
+![Footer](https://github.com/rkmiller131/cms-papercat/assets/21061780/46d5e3e1-f2b0-4c66-afe8-d60a67c70fc8)
 
+However, if you would like to change the columns completely, this is also possible by clicking on the column, and 'Remove' on the righthand panel. There can be up to 4 columns, and each column can have up to 3 fields: text, links, or buttons.<br><br>
+
+https://github.com/rkmiller131/cms-papercat/assets/21061780/6c64cc75-1a06-4d2c-b3e0-ce0a03944409
+
+### Pages:<br>
+Each tab on the Navbar corresponds to a page, and the naming of the pages corresponds to the url route created. For example, creating a page called 'Games' will route to:
+`/games`<br>
 Please, read the official documentation at [Reactbricks.com](https://reactbricks.com).
