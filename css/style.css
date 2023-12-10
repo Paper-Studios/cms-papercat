@@ -3,7 +3,9 @@
   --color-primary: #5928B2;
   --color-secondary: #F5647F;
   --color-white: #ffffff;
+  --color-textarea: #402278;
   --color-gradient: linear-gradient(to bottom, #884CF5, #4E229C);
+  --color-gradient-reverse: linear-gradient(to top, #884CF5, #4E229C);
   --border-purple: 2px solid #5928B2;
   --text-primary: 'Bubblegum Sans', cursive;
   --text-secondary: 'Courier Prime', monospace;

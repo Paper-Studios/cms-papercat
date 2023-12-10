@@ -92,7 +92,7 @@
   margin: 0 2% 2%;
   font-family: var(--text-tertiary);
   font-size: 20px;
-  background-color: #402278;
+  background-color: var(--color-textarea);
   padding: 3%;
   border-radius: 1rem 1rem;
 }

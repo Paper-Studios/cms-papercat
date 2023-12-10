@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
-import Navbar from '../react-bricks/bricks/layout/Navbar'
-import styles from '../css/layout.module.css'
+import React, { ReactNode } from 'react';
+import Navbar from '../react-bricks/bricks/layout/Navbar';
+import styles from '../css/layout.module.css';
 
 interface LayoutProps {
   links: {
@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ links, children }) => {
         {children}
       </main>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

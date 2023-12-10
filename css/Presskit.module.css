@@ -19,7 +19,7 @@
 
 .presskitContent {
   justify-content: space-between;
-  background: linear-gradient(to top, #884CF5, #4E229C);
+  background: var(--color-gradient-reverse);
   display: flex;
   padding: 4%;
 }
@@ -38,7 +38,7 @@
   flex-basis: 73%;
 }
 .mainbarEntry {
-  background: #402278;
+  background: var(--color-textarea);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
