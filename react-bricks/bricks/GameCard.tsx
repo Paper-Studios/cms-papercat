@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { types, Image, useAdminContext } from 'react-bricks/frontend'
-import { UseGameClickedContext } from '../context/GameInfoContext'
+import React, { useState, useEffect } from 'react';
+import { types, Image, useAdminContext } from 'react-bricks/frontend';
+import { UseGameClickedContext } from '../context/GameInfoContext';
 
-import styles from '../../css/Games.module.css'
+import styles from '../../css/Games.module.css';
 
 interface GameCardProps {
   name: string;
@@ -58,7 +58,7 @@ const GameCard: types.Brick<GameCardProps> = ({ name, steamLink }) => {
         <span className={styles.gameTitle}>{name}</span>
       </div>
     </div>
-  )
+  );
 }
 
 GameCard.schema = {
@@ -99,4 +99,4 @@ GameCard.schema = {
   ]
 }
 
-export default GameCard
+export default GameCard;

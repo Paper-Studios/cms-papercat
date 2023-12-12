@@ -1,8 +1,8 @@
-import React from 'react'
-import { Text, types, Repeater } from 'react-bricks/frontend'
-import IFramePlayer from './features/IFramePlayer'
+import React from 'react';
+import { Text, types, Repeater } from 'react-bricks/frontend';
+import IFramePlayer from './features/IFramePlayer';
 
-import styles from '../../css/Presskit.module.css'
+import styles from '../../css/Presskit.module.css';
 
 interface PresskitProps {
   developerTitle: string;

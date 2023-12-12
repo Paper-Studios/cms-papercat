@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, Repeater } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Repeater } from 'react-bricks/frontend';
 
-import styles from '../../css/Presskit.module.css'
+import styles from '../../css/Presskit.module.css';
 
 const PresskitEntry: types.Brick = () => {
   return (
@@ -44,4 +44,4 @@ PresskitEntry.schema = {
   }),
 }
 
-export default PresskitEntry
+export default PresskitEntry;

@@ -1,8 +1,8 @@
-import React from 'react'
-import { Image, types } from 'react-bricks/frontend'
-import Container, { Padding, Size } from '../../components/Container'
-import Section, { Border, sectionDefaults } from '../../components/Section'
-import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps'
+import React from 'react';
+import { Image, types } from 'react-bricks/frontend';
+import Container, { Padding, Size } from '../../components/Container';
+import Section, { Border, sectionDefaults } from '../../components/Section';
+import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps';
 
 const photo = {
   fallbackSrc:
@@ -52,7 +52,7 @@ const BigImage: types.Brick<BigImageProps> = ({
         <Image propName="image3" alt="Image" imageStyle={{ width: '100%', height: 'auto' }}/>
       </Container>
     </Section>
-  )
+  );
 }
 
 BigImage.schema = {
@@ -88,4 +88,4 @@ BigImage.schema = {
   ],
 }
 
-export default BigImage
+export default BigImage;

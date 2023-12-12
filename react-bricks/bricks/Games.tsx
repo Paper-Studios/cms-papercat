@@ -43,7 +43,13 @@ const Games: types.Brick = () => {
         }
       </div>
       <div className={styles.gamesSelectRight} onClick={(e) => resetGameDisplayed(e)}>
-        <h3 style={{marginBottom: '5%'}}>Current releases:</h3>
+        <Text
+          propName='gameCardTitle'
+          placeholder=''
+          renderBlock={({ children }) => (
+            <h3 style={{marginBottom: '5%'}}>{children}</h3>
+          )}
+        />
         <Repeater propName="GameCard"/>
       </div>
     </div>
@@ -60,6 +66,7 @@ Games.schema = {
   }],
   getDefaultProps: () => ({
     gameInfoTitle: 'We make games!',
+    gameCardTitle: 'Current releases:',
     GameCard: [
       {
         name: 'Paper Perjury',

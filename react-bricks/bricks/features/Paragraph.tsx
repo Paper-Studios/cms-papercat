@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, RichText, types } from 'react-bricks/frontend'
-import Container, { Padding, Size } from '../../components/Container'
-import Section, { Border, sectionDefaults } from '../../components/Section'
-import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps'
+import React from 'react';
+import { RichText, types } from 'react-bricks/frontend';
+import Container, { Padding, Size } from '../../components/Container';
+import Section, { Border, sectionDefaults } from '../../components/Section';
+import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps';
 
 interface ParagraphProps {
   backgroundColor: string
@@ -109,7 +109,7 @@ const Paragraph: types.Brick<ParagraphProps> = ({
         />
       </Container>
     </Section>
-  )
+  );
 }
 
 Paragraph.schema = {
@@ -162,4 +162,4 @@ Paragraph.schema = {
   ],
 }
 
-export default Paragraph
+export default Paragraph;

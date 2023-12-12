@@ -1,6 +1,6 @@
-import React from 'react'
-import { types, Image, Text, RichText } from 'react-bricks/frontend'
-import styles from '../../css/TeamMember.module.css'
+import React from 'react';
+import { types, Image, Text, RichText } from 'react-bricks/frontend';
+import styles from '../../css/TeamMember.module.css';
 
 interface TeamMemberProps {
   memberName: string;

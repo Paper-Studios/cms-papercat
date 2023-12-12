@@ -1,9 +1,9 @@
-import React from 'react'
-import { types } from 'react-bricks/frontend'
-import Container, { Padding, Size } from '../../components/Container'
-import Section, { Border, sectionDefaults } from '../../components/Section'
-import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps'
-import TitleSubtitle from '../../components/TitleSubtitle'
+import React from 'react';
+import { types } from 'react-bricks/frontend';
+import Container, { Padding, Size } from '../../components/Container';
+import Section, { Border, sectionDefaults } from '../../components/Section';
+import { containerWidthSideGroup, paddingBordersSideGroup } from '../../SideEditProps';
+import TitleSubtitle from '../../components/TitleSubtitle';
 
 interface TitleProps {
   backgroundColor: string
@@ -41,7 +41,7 @@ const Title: types.Brick<TitleProps> = ({
         />
       </Container>
     </Section>
-  )
+  );
 }
 
 Title.schema = {
@@ -90,4 +90,4 @@ Title.schema = {
   ],
 }
 
-export default Title
+export default Title;

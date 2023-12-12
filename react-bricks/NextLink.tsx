@@ -1,6 +1,6 @@
-import Link from 'next/link' // client-side route transitions
-import { useRouter } from 'next/router'
-import { types } from 'react-bricks/frontend'
+import Link from 'next/link'; // client-side route transitions
+import { useRouter } from 'next/router';
+import { types } from 'react-bricks/frontend';
 
 const NextLink: types.RenderLocalLink = ({
   href,
@@ -9,14 +9,14 @@ const NextLink: types.RenderLocalLink = ({
   isAdmin,
   children,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  let anchorClassName = ''
+  let anchorClassName = '';
 
   if (router.asPath === href) {
-    anchorClassName = `${className} ${activeClassName}`
+    anchorClassName = `${className} ${activeClassName}`;
   } else {
-    anchorClassName = className
+    anchorClassName = className;
   }
 
   if (isAdmin) {
@@ -24,13 +24,13 @@ const NextLink: types.RenderLocalLink = ({
       <Link href={href} className={anchorClassName}>
         {children}
       </Link>
-    )
+    );
   }
   return (
     <Link href={href} className={anchorClassName}>
       {children}
     </Link>
-  )
+  );
 }
 
-export default NextLink
+export default NextLink;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, Image } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Image } from 'react-bricks/frontend';
 
-import styles from '../../../css/Home.module.css'
+import styles from '../../../css/Home.module.css';
 
 const ImagePair: types.Brick = () => {
   return (
@@ -19,7 +19,7 @@ const ImagePair: types.Brick = () => {
         maxWidth={600}
       />
     </div>
-  )
+  );
 }
 
 ImagePair.schema = {
@@ -28,4 +28,4 @@ ImagePair.schema = {
   hideFromAddMenu: true,
 }
 
-export default ImagePair
+export default ImagePair;

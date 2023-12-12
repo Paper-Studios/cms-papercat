@@ -1,11 +1,9 @@
-import React from "react"
-import { Text, Repeater, types, useAdminContext } from "react-bricks/frontend"
+import React from 'react';
+import { Text, Repeater, types, useAdminContext } from 'react-bricks/frontend';
 
-import styles from "../../../css/Footer.module.css"
+import styles from '../../../css/Footer.module.css';
 
-interface FooterProps {}
-
-const Footer: types.Brick<FooterProps> = ({}) => {
+const Footer: types.Brick = ({}) => {
   const { isAdmin, previewMode } = useAdminContext();
   return (
     <footer className={styles.footer}>
@@ -27,7 +25,7 @@ const Footer: types.Brick<FooterProps> = ({}) => {
       </section>
       <Repeater propName="columns" />
     </footer>
-  )
+  );
 }
 
 Footer.schema = {
@@ -93,7 +91,6 @@ Footer.schema = {
       }
     ],
   }),
-  sideEditProps: [],
 }
 
-export default Footer
+export default Footer;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, RichText } from 'react-bricks/frontend'
+import React from 'react';
+import { types, RichText } from 'react-bricks/frontend';
 
-import styles from '../../../css/Home.module.css'
+import styles from '../../../css/Home.module.css';
 
 const HomeParagraph: types.Brick = () => {
   return (
@@ -20,7 +20,7 @@ const HomeParagraph: types.Brick = () => {
         <span style={{ color: '#F5647F' }}>{children}</span>
       )}
     />
-  )
+  );
 }
 
 HomeParagraph.schema = {
@@ -32,4 +32,4 @@ HomeParagraph.schema = {
   }),
 }
 
-export default HomeParagraph
+export default HomeParagraph;

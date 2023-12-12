@@ -1,11 +1,9 @@
-import React from "react"
-import { RichText, types, useAdminContext } from "react-bricks/frontend"
+import React from 'react'
+import { RichText, types, useAdminContext } from 'react-bricks/frontend'
 
-import styles from "../../../css/Footer.module.css"
+import styles from '../../../css/Footer.module.css'
 
-interface FooterLinkProps {}
-
-const FooterLink: types.Brick<FooterLinkProps> = () => {
+const FooterLink: types.Brick = () => {
   const { isAdmin, previewMode } = useAdminContext();
 
   return (
@@ -37,4 +35,4 @@ FooterLink.schema = {
   })
 }
 
-export default FooterLink
+export default FooterLink;

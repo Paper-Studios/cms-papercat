@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, RichText } from 'react-bricks/frontend'
+import React from 'react';
+import { types, RichText } from 'react-bricks/frontend';
 
-import styles from '../../css/Presskit.module.css'
+import styles from '../../css/Presskit.module.css';
 
 const EntryParagraph: types.Brick = () => {
   return (
@@ -21,7 +21,7 @@ const EntryParagraph: types.Brick = () => {
         <span style={{ color: '#F5647F' }}>{children}</span>
       )}
     />
-  )
+  );
 }
 
 EntryParagraph.schema = {
@@ -33,4 +33,4 @@ EntryParagraph.schema = {
   }),
 }
 
-export default EntryParagraph
+export default EntryParagraph;

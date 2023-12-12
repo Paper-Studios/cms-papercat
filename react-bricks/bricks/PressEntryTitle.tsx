@@ -1,13 +1,9 @@
-import React from 'react'
-import { types, Text } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Text } from 'react-bricks/frontend';
 
-import styles from '../../css/Presskit.module.css'
+import styles from '../../css/Presskit.module.css';
 
-interface PressEntryTitleProps {
-
-}
-
-const PressEntryTitle: types.Brick<PressEntryTitleProps> = () => {
+const PressEntryTitle: types.Brick = () => {
   return (
     <Text
       propName='title'
@@ -25,4 +21,4 @@ PressEntryTitle.schema = {
   hideFromAddMenu: true,
 }
 
-export default PressEntryTitle
+export default PressEntryTitle;

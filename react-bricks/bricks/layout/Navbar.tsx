@@ -1,9 +1,6 @@
-import React from 'react'
-import {
-  types,
-  Link
-} from 'react-bricks/frontend'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { types, Link } from 'react-bricks/frontend';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
   faPeopleGroup,
@@ -11,9 +8,9 @@ import {
   faFeatherPointed,
   faEnvelope,
   faBoxOpen
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
-import styles from '../../../css/Navbar.module.css'
+import styles from '../../../css/Navbar.module.css';
 
 interface NavItemProps {
   discordURL: string
@@ -78,7 +75,7 @@ const Navbar: types.Brick<NavItemProps> = ({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 Navbar.schema = {
@@ -111,4 +108,4 @@ Navbar.schema = {
   ],
 }
 
-export default Navbar
+export default Navbar;

@@ -1,9 +1,9 @@
-import React from 'react'
-import { types, Text, Image } from 'react-bricks/frontend'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons'
+import React from 'react';
+import { types, Text, Image } from 'react-bricks/frontend';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindows, faApple } from '@fortawesome/free-brands-svg-icons';
 
-import styles from '../../../css/Home.module.css'
+import styles from '../../../css/Home.module.css';
 
 interface SteamBoxProps {
   tinyTeam: boolean;
@@ -64,7 +64,7 @@ const SteamBox: types.Brick<SteamBoxProps> = ({tinyTeam, windowsIcon, appleIcon,
         </a>
       </div>
     </div>
-  )
+  );
 }
 
 SteamBox.schema = {
@@ -126,4 +126,4 @@ SteamBox.schema = {
   ]
 }
 
-export default SteamBox
+export default SteamBox;

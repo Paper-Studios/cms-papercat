@@ -1,4 +1,4 @@
-import { types } from 'react-bricks/frontend'
+import { types } from 'react-bricks/frontend';
 
 export const containerSizeEditProps: types.ISideEditProp = {
   name: 'width',
