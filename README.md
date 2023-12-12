@@ -79,6 +79,18 @@ https://github.com/rkmiller131/cms-papercat/assets/21061780/9fc808a4-410d-4277-b
 <br><br>
 
 **Blog Page**<br>
-- Located in `Pages` -> `Blog`,
+- Located in `Pages` -> `Blog`, this dropdown displays all current blog posts as individual pages. To create a new article, click the `Add New` page icon. From here you can create your own content with a selection of background colors for a main title, big image, and paragraphs. See the video below for additional styling options such as padding adjustments and dividing borders.<br><br>
 
+
+https://github.com/rkmiller131/cms-papercat/assets/21061780/cedd2329-6e66-4c17-8742-2e00ed334e22
+
+- **IMPORTANT:** Blog entry cards that the user sees (before clicking and viewing the article you just created) need an additional step from the admin. `You must enter a featured image and SEO data on the current page`.<br><br>
+<div align="center">
+    <img width="276" alt="BlogSEO" src="https://github.com/rkmiller131/cms-papercat/assets/21061780/c24e2bd3-e712-46d2-9c2b-169618974492">
+</div>
+
+**Blog Page**<br>
+- Located in `Pages` -> `Pages` -> `Contact`,
+
+## React Bricks Documentation
 Please, read the official documentation at [Reactbricks.com](https://reactbricks.com).
