@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, Text } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Text } from 'react-bricks/frontend';
 
-import styles from '../../../css/Home.module.css'
+import styles from '../../../css/Home.module.css';
 
 const HomeTitle: types.Brick = () => {
   return (
@@ -26,4 +26,4 @@ HomeTitle.schema = {
   }),
 }
 
-export default HomeTitle
+export default HomeTitle;

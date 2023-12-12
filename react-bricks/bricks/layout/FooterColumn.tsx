@@ -1,16 +1,14 @@
-import React from "react"
-import { Repeater, types } from "react-bricks/frontend"
-import styles from "../../../css/Footer.module.css"
+import React from 'react'
+import { Repeater, types } from 'react-bricks/frontend'
+import styles from '../../../css/Footer.module.css'
 
-interface FooterColumnProps {}
-
-const FooterColumn: types.Brick<FooterColumnProps> = () => {
+const FooterColumn: types.Brick = () => {
   return (
     <div className={styles.footerSection}>
       <Repeater propName='links' />
       <Repeater propName='buttons' />
     </div>
-  )
+  );
 }
 
 FooterColumn.schema = {
@@ -34,4 +32,4 @@ FooterColumn.schema = {
   ]
 }
 
-export default FooterColumn
+export default FooterColumn;

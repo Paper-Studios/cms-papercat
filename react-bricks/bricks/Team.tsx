@@ -1,7 +1,7 @@
-import React from 'react'
-import { Text, RichText, types, Repeater } from 'react-bricks/frontend'
+import React from 'react';
+import { Text, RichText, types, Repeater } from 'react-bricks/frontend';
 
-import styles from '../../css/Team.module.css'
+import styles from '../../css/Team.module.css';
 
 interface TeamProps {
   studioTitle: string;

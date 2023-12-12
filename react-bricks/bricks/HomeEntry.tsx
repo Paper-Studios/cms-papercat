@@ -1,7 +1,7 @@
-import React from 'react'
-import { types, Repeater } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Repeater } from 'react-bricks/frontend';
 
-import styles from '../../css/Home.module.css'
+import styles from '../../css/Home.module.css';
 
 const HomeEntry: types.Brick = () => {
   return (
@@ -11,7 +11,7 @@ const HomeEntry: types.Brick = () => {
       <Repeater propName="HomeParagraph" />
       <Repeater propName="SteamBox" />
     </div>
-  )
+  );
 }
 
 HomeEntry.schema = {
@@ -47,4 +47,4 @@ HomeEntry.schema = {
   }),
 }
 
-export default HomeEntry
+export default HomeEntry;

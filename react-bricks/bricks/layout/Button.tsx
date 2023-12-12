@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { Text, Link, File, types, useAdminContext } from 'react-bricks/frontend'
 
-import styles from '../../../css/Button.module.css'
-import footerOverride from '../../../css/FooterBtnOverride.module.css'
+import styles from '../../../css/Button.module.css';
+import footerOverride from '../../../css/FooterBtnOverride.module.css';
 
 export interface ButtonProps {
   icon?: string
@@ -141,7 +141,7 @@ const Button: types.Brick<ButtonProps> = ({
         />
       }
     </button>
-  )
+  );
 }
 
 Button.schema = {
@@ -248,4 +248,4 @@ Button.schema = {
   ],
 }
 
-export default Button
+export default Button;

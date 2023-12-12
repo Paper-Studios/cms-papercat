@@ -1,12 +1,9 @@
-import React from 'react'
-import { types, Image, useAdminContext } from 'react-bricks/frontend'
+import React from 'react';
+import { types, Image, useAdminContext } from 'react-bricks/frontend';
 
-import styles from '../../css/Presskit.module.css'
+import styles from '../../css/Presskit.module.css';
 
-interface PressEntryImageProps {
-
-}
-const PressEntryImage: types.Brick<PressEntryImageProps> = () => {
+const PressEntryImage: types.Brick = () => {
   const { isAdmin, previewMode } = useAdminContext()
   return (
     <Image
@@ -23,7 +20,7 @@ const PressEntryImage: types.Brick<PressEntryImageProps> = () => {
             );
        }}
     />
-  )
+  );
 }
 
 PressEntryImage.schema = {

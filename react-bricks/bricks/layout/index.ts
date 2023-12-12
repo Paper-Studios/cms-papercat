@@ -1,9 +1,9 @@
-import { types } from "react-bricks/frontend"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-import FooterColumn from "./FooterColumn"
-import FooterLink from "./FooterLink"
-import Button from "./Button"
+import { types } from 'react-bricks/frontend';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import FooterColumn from './FooterColumn';
+import FooterLink from './FooterLink';
+import Button from './Button';
 
 const layout: types.Brick[] = [
   Navbar,
@@ -13,4 +13,4 @@ const layout: types.Brick[] = [
   Button,
 ]
 
-export default layout
+export default layout;

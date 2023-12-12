@@ -1,7 +1,7 @@
-import React from 'react'
-import IFramePlayer from './features/IFramePlayer'
-import { Text, RichText, Image, types, Repeater } from 'react-bricks/frontend'
-import styles from '../../css/Home.module.css'
+import React from 'react';
+import IFramePlayer from './features/IFramePlayer';
+import { Image, types, Repeater } from 'react-bricks/frontend';
+import styles from '../../css/Home.module.css';
 
 interface HomeProps {
   videoLink: string;

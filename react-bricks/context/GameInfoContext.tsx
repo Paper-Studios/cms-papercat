@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react';
 
 export type GameInfoData = {
   gameInfo: {
@@ -16,14 +16,14 @@ export type GameClickedType = {
   summary: string;
   embeddedurl: string;
   steamLink: string;
-}
+};
 
 export const GameInfoContext = createContext<GameInfoContextType | undefined>(undefined);
 
 export type GameClickedContextType = {
   changeGame: (gameTitle: string) => void;
   gameDisplayed: GameClickedType;
-}
+};
 
 export const GameClickedContext = createContext<GameClickedContextType | null>(null);
 
@@ -33,7 +33,7 @@ export const UseGameInfoContext = () => {
     throw new Error('useGameInfoContext must be used within GameInfoContextProvider');
   }
   return context;
-}
+};
 
 export const UseGameClickedContext = () => {
   const context = useContext(GameClickedContext);
@@ -41,7 +41,7 @@ export const UseGameClickedContext = () => {
     throw new Error('useGameClickedContext must be used within GameClickedContextProvider')
   }
   return context;
-}
+};
 
 export const GameInfoContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [gameInfo, setGameInfo] = useState<GameInfoData>({} as GameInfoData);

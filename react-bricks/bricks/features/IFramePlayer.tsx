@@ -1,6 +1,5 @@
 import React from 'react';
 import { types } from 'react-bricks/frontend';
-import styles from "../../../css/Home.module.css";
 
 interface IFramePlayerProps {
   videoLink: string;
