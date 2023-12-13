@@ -18,6 +18,7 @@ import Title from './features/Title';
 import Paragraph from './features/Paragraph';
 import Games from './Games';
 import GameCard from './GameCard';
+import Contact from './Contact';
 
 const bricks: types.Theme[] = [
   {
@@ -40,12 +41,16 @@ const bricks: types.Theme[] = [
         bricks: [Games, GameCard]
       },
       {
-        categoryName: 'Presskit Section',
-        bricks: [Presskit, PresskitEntry, PressEntryTitle, EntryParagraph, PressEntryImage]
-      },
-      {
         categoryName: 'Single column / Blog',
         bricks: [Title, Paragraph, BigImage],
+      },
+      {
+        categoryName: 'Contact Section',
+        bricks: [Contact],
+      },
+      {
+        categoryName: 'Presskit Section',
+        bricks: [Presskit, PresskitEntry, PressEntryTitle, EntryParagraph, PressEntryImage]
       },
     ],
   },

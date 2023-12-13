@@ -39,3 +39,8 @@
   color: blue;
   text-decoration: underline;
 }
+
+.contactBtn {
+  align-self: center;
+  width: 10rem;
+}
