@@ -82,7 +82,7 @@ const Button: types.Brick<ButtonProps> = ({
     );
   }
 
-  // Download Press Kit (Only documents, no zip file support from bricks, unfortunately)
+  // Download Press Kit (Only pdf or rtf documents, no zip file support from bricks, unfortunately)
   if(buttonType === 'download') {
     return (
       <File
@@ -117,9 +117,8 @@ const Button: types.Brick<ButtonProps> = ({
     );
   }
 
-  // Form or Regular Button
-  // Note when Contact page is built, add a form submission handler with EmailJS
-  const { isAdmin, previewMode } = useAdminContext()
+  // Regular Button Default or Contact Form Submission Button
+  const { isAdmin, previewMode } = useAdminContext();
 
   return (
     <button
@@ -127,6 +126,7 @@ const Button: types.Brick<ButtonProps> = ({
       className={classNames(
         styles.button,
         size === 'small' ? styles.buttonPsmall : styles.buttonPnormal,
+        form ? styles.contactBtn : '',
         className,
         { [footerOverride.footerBtn]: className === 'footerBtn' } // apply override only if class = 'footerBtn'
       )}
@@ -233,13 +233,12 @@ Button.schema = {
         {
           name: 'className',
           label: 'Button Class Name',
-          type: types.SideEditPropType.Select,
+          type: types.SideEditPropType.Boolean,
           selectOptions: {
             display: types.OptionsDisplay.Select,
             options: [
               { value: '', label: 'Not for a specific section' },
               { value: 'footerBtn', label: 'Footer Section' },
-              { value: 'gamesBtn', label: 'Games Section' },
             ]
           }
         }
