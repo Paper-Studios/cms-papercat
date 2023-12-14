@@ -13,7 +13,7 @@ function submitForm(details) {
     user_email,
     message
   }
-  emailjs.send('service', 'template', templateParams, 'somekey')
+  emailjs.send('service_l65ny44', 'template_rpfyt74', templateParams, '7jSK--ns230DPWnGX')
     .then(() => {
       alert('Thanks! We\'ll be in touch.');
     })
