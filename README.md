@@ -102,6 +102,12 @@ https://github.com/rkmiller131/cms-papercat/assets/21061780/cedd2329-6e66-4c17-8
 - Titles for each new Entry are added automatically, but simply deleting the text will eliminate them on the user-facing client.
 - Images can be clicked, which will open up their full resolution in another tab in the browser (webp format). From here, users can right click and save the image to their own computer.
 
+
+
+https://github.com/rkmiller131/cms-papercat/assets/21061780/04e156b4-f95a-45be-83bd-b6b0f0c18a5a
+
+
+<br>
 ---
     
 ## 📖 React Bricks Documentation
