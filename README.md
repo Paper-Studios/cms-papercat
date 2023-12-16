@@ -4,7 +4,7 @@ A Content Management System (CMS) benefits clients by enabling easy, user-friend
 While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS, [React Bricks](https://reactbricks.com) offers a unique and fully customizable alternative that uses plain React components and CSS modules inside both a front-end and admin dashboard.
 
 # About Paper Cat Games
-[-----]
+See the initial deployment [here](https://admirable-clafoutis-124804.netlify.app/blog)
 
 ## Team Members
 CMS Creator:
