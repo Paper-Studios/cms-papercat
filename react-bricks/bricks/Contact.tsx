@@ -6,9 +6,15 @@ import Button from './layout/Button';
 
 import styles from '../../css/Contact.module.css';
 
-function submitForm(details) {
+interface TemplateParams {
+  user_name: string;
+  user_email: string;
+  message: string;
+}
+
+function submitForm(details: TemplateParams): void {
   const { user_name, user_email, message } = details;
-  const templateParams = {
+  const templateParams: Record<string, unknown> = {
     user_name,
     user_email,
     message
