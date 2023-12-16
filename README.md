@@ -89,8 +89,20 @@ https://github.com/rkmiller131/cms-papercat/assets/21061780/cedd2329-6e66-4c17-8
     <img width="276" alt="BlogSEO" src="https://github.com/rkmiller131/cms-papercat/assets/21061780/c24e2bd3-e712-46d2-9c2b-169618974492">
 </div>
 
-**Blog Page**<br>
-- Located in `Pages` -> `Pages` -> `Contact`,
+**Contact Page**<br>
+- Located in `Pages` -> `Pages` -> `Contact`, the lefthand image next to the Contact form can be changed with a new upload. Form submission is handled by a third party and templates for email auto-replies can be modified through their service. See [Email.js](https://www.emailjs.com/) for more information.<br>
 
-## React Bricks Documentation
+**Press Kit Page**<br>
+- Located in `Pages` -> `Pages` -> `Presskit`, to remove the currently constructed Press Kit Page, click on the purple background and the trash can icon on the top right. From here you can press, `Add your first block` and select a fresh Home Page under the `Presskit Section` from the sidebar controls.
+- By default, some content will already appear as a template. Images will need to be uploaded.
+- To change the layout entirely, each block can be deleted and new entries can be created.
+- Each Entry, added through the sidebar controls under 'ADD NEW...' `Entry`, has a specific pattern of repeatable bricks, in this order:
+    - Paragraph
+    - Game Image
+- Titles for each new Entry are added automatically, but simply deleting the text will eliminate them on the user-facing client.
+- Images can be clicked, which will open up their full resolution in another tab in the browser (webp format). From here, users can right click and save the image to their own computer.
+
+---
+    
+## 📖 React Bricks Documentation
 Please, read the official documentation at [Reactbricks.com](https://reactbricks.com).
