@@ -160,6 +160,20 @@ Presskit.schema = {
       }
     ]
   }),
+  sideEditProps: [
+    {
+      groupName: 'Youtube Trailer',
+      defaultOpen: true,
+      props: [
+        {
+          name: 'videoLink',
+          label: 'Trailer Url',
+          helperText: 'On YouTube, click on Share, then Embed, then copy the src url without quotations',
+          type: types.SideEditPropType.Text,
+        }
+      ]
+    },
+  ]
 }
 
 export default Presskit;
