@@ -4,7 +4,8 @@ A Content Management System (CMS) benefits clients by enabling easy, user-friend
 While Wix, SquareSpace, and Wordpress may come to mind when thinking about a CMS, [React Bricks](https://reactbricks.com) offers a unique and fully customizable alternative that uses plain React components and CSS modules inside both a front-end and admin dashboard.
 
 # About Paper Cat Games
-See the initial deployment [here](https://admirable-clafoutis-124804.netlify.app)
+Paper Cat Games is a professional video game studio launching their debut game, "Paper Perjury," a detective mystery targeting teens and adults. The studio aims to be self-funded, creating games that reward clever thinking and delve into social issues. With a long-term vision of releasing a new game every 2-3 years while maintaining independence, Paper Cat Games values diverse community feedback to enhance their products. <br><br>
+See the initial deployment of their website [here](https://admirable-clafoutis-124804.netlify.app)
 
 ## Team Members
 CMS Creator:
