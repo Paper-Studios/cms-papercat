@@ -1,5 +1,6 @@
 .App {
-  background-image: url('../public/assets/bgSeamless.png');
+/*   background-image: url('../public/assets/bgSeamless.png'); */
+  background: #402278;
   color: var(--color-white);
   font-family: var(--text-secondary);
   min-height: 100vh;
