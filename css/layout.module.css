@@ -1,6 +1,9 @@
 .App {
 /*   background-image: url('../public/assets/bgSeamless.png'); */
+/*   dark purple: */
   background: #402278;
+/*   light purple: */
+/*   background: #884CF5; */
   color: var(--color-white);
   font-family: var(--text-secondary);
   min-height: 100vh;
